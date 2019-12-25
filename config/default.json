@@ -1,0 +1,5 @@
+{
+    "port": 5000,
+    "jwtSecret": "goftoi123sl",
+    "mongooUri": "mongodb+srv://max:<pzxkguBOL5P6pQY6>@cluster0-ikk1v.azure.mongodb.net/test?retryWrites=true&w=majority"
+}
