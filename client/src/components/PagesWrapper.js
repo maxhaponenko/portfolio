@@ -1,51 +1,70 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import profileImage from '../media/images/profile-image.jpg';
 
 class PagesWrapper extends Component {
     
+    constructor(props) {
+        super(props);
+        this.state = {
+            navigationOpen: false
+        }
+        
+    }
+
     render() {
-
+        // const { navigationOpen } = this.state
+        // console.log(navigationOpen)
         return (
-            <div>
+            <Fragment>
+                <nav>
+                    <button className={`nav-button ${this.state.navigationOpen ? 'active' : ''}`} onClick={() => {
+                        this.setState({
+                            navigationOpen: !this.state.navigationOpen
+                        })
+                    }}>
+                        <i className="fas fa-sort-amount-down-alt nav-button__icon"></i>
+                        <div className="nav-button__text">Navigate</div>
+                    </button>
+                    <NavigationMenu openMenu={this.state.navigationOpen}/>
+                </nav>
                 <header>
-                    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <NavLink className="navbar-brand" to="/">Navbar</NavLink>
-                        <button
-                            className="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav mr-auto">
-                                {/* <li className="nav-item">
-                                    <NavLink className="nav-link" to="/">Home</NavLink>
-                                </li> */}
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/registration">Registration</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/login">Login</NavLink>
-                                </li>
-                            </ul>
-                            <form className="form-inline my-2 my-lg-0">
-                                <button
-                                    className="btn btn-outline-success my-2 my-sm-0"
-                                    type="warning"
-                                    onClick={() => this.props.history.push("/registration")}>Registration</button>
-                                <button
-                                    className="btn btn-outline-success my-2 my-sm-0 ml-3"
-                                    type="submit"
-                                    onClick={() => this.props.history.push("/login")}>Login</button>
-                            </form>
+                    <div className="profile-container">
+                        <div className="profile">
+                            <div className="profile__photo">
+                                <img src={profileImage}></img>
+                            </div>
+                            <div className="profile__text">
+                                <div className="profile__text--name">
+                                    Max Haponenko
+                                </div>
+                                <div className="profile__text--role">
+                                    Frontend developer
+                                </div>
+                            </div>
                         </div>
-                    </nav>
+                    </div>
+                    
+                    <div className="rates-container">
+                        <div className="rates__hourly">
+                            <div className="rates__hourly--icon"> 
+                                <i className="far fa-clock"></i>
+                            </div>
+                            <div className="rates__hourly--text">
+                                <span>from</span> $12 / <span>hour</span>
+                            </div>
+                        </div>
+                        <div className="rates__divider">or</div>
+                        <div className="rates__monthly">
+                            <div className="rates__monthly--icon">
+                                <i className="far fa-calendar-alt"></i>
+                            </div>
+                            <div className="rates__monthly--text">
+                                <span>from</span> $1500 <span>monthly</span>
+                            </div>
+                        </div>
+                    </div>
                 </header>
 
                 {this.props.children}
@@ -53,9 +72,34 @@ class PagesWrapper extends Component {
                 <footer>
 
                 </footer>
-            </div>
+            </Fragment>
         )
     } 
+}
+
+class NavigationMenu extends Component {
+
+    render() {
+
+        return (
+            <div className={`nav-menu ${this.props.openMenu ? 'open' : ''}`}>
+                <NavLink to="/" className="nav-menu__item">
+                    <div className="nav-menu__item--text">Main</div>
+                </NavLink>
+                <NavLink to="/" className="nav-menu__item">
+                    <div className="nav-menu__item--text">Skills</div>
+                </NavLink>
+                <NavLink to="/" className="nav-menu__item">
+                    <div className="nav-menu__item--text">Experience</div>
+                </NavLink>
+                <NavLink to="/" className="nav-menu__item">
+                    <div className="nav-menu__item--text">Projects</div>
+                </NavLink>
+                
+            </div>
+            
+        )
+    }
 }
 
 export default withRouter(PagesWrapper)
