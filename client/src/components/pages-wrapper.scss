@@ -149,17 +149,37 @@ header {
 
 nav {
     position: fixed;
-    width: 300px;
+    width: 259px;
     height: 100px;
     right: 0px;
     top: 0px;
+    .nav-page-name {
+        position: relative;
+        color: $color-font-grey;
+        font-size: 14px;
+        letter-spacing: 1.2px;
+        font-weight: 300;
+        height: 20px;
+        margin: 5px 0 5px 0;
+        width: auto;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 17px;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+        span {
+            color: $color-blue;
+        }
+    }
     .nav-button {
-        min-width: 342px;
+        min-width: 260px;
         min-height: 37px;
-        max-width: 342px;
+        max-width: 260px;
         max-height: 37px;
         position: relative;
-        top: 29px;
+        // top: 29px;
         box-shadow: $shadow-black-blue-lined;
         background: #2896fd;
         background: linear-gradient(to right, #2896fd 0%, #1d6cb7 52%, #37485e 100%);
@@ -189,6 +209,7 @@ nav {
         }
 
         &.active {
+            z-index: 3;
             background: #4F4F4F;
         }
 
@@ -207,29 +228,98 @@ nav {
             margin-left: 15px;
         }
     }
+    .toggler {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        right: 0px;
+        top: 0px;
+        z-index: 0;
+        background: transparent;
+        display: none;
+    }
     .nav-menu {
         position: relative;
         display: flex;
         flex-direction: column;
-        top: 32px;
-        right: -350px;
-        &.open {
-            right: 20px;
-            width: 320px;
-        }
+        top: 4px;
+        right: 0px;
+        width: 310px;
+        z-index: 2;
+        // right: -350px;
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        
+        
         &__item {
-            margin: 2.5px 0 2.5px 0;
+            position: relative;
+            margin: 2px 0 2px 0;
             background: #4F4F4F;
             height: 29px;
+            width: 310px;
+            right: -310px;
             border-bottom-left-radius: 10px;
             border-top-left-radius: 10px;
             text-decoration: none;
             color: $color-white;
-            box-shadow: $shadow-black-blue-lined;
+            
             display: flex;
+            -webkit-transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
+            &.open {
+                right: 0px;
+                width: 310px;
+                -webkit-transition: 0.3s ease-in-out;
+                -moz-transition: 0.3s ease-in-out;
+                -o-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+            }
+            &::before {
+                content: '';
+                border-radius: 10px;
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+                z-index: -1;
+                box-shadow: $shadow-black-blue-lined;
+            }
+            &:hover {
+                width: 310px;
+                -webkit-transition: 0.1s ease-in-out;
+                -moz-transition: 0.1s ease-in-out;
+                -o-transition: 0.1s ease-in-out;
+                transition: 0.1s ease-in-out;
+                .nav-menu__item--text {
+                    color: $color-blue;
+                }
+            }
+
+            &.active {
+                width: 320px;
+                .pointer {
+                    width: 0px;
+                    height: 0px;
+                    border-top: 5px solid transparent;
+                    border-left: 6px solid $color-blue;
+                    border-bottom: 5px solid transparent;
+                    align-self: center;
+                    margin-left: -1px;
+                    position: absolute;
+                }
+                .nav-menu__item--text {
+                    color: $color-blue;
+                }
+
+            }
             &--text {
-                margin-left: 5px;
+                margin-left: 12px;
                 align-self: center;
+                font-size: 17px;
+                letter-spacing: 2px;
+                font-weight: 300;
             }
         }
     }

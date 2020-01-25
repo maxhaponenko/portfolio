@@ -1,24 +1,74 @@
 import React, { Component, Fragment } from 'react';
-import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import profileImage from '../media/images/profile-image.jpg';
+import NavigationMenu from './navigation-menu';
+import { animatePosition } from '../services/animation';
 
 class PagesWrapper extends Component {
     
     constructor(props) {
         super(props);
         this.state = {
-            navigationOpen: false
+            navigationOpen: false,
+            pages: {
+                main: 'main',
+                skills: 'skills',
+                experience: 'experience',
+                projects: 'projects'
+            },
+            activePage: 'main',
+        }
+    }
+
+    changePage = (name) => {
+        this.setState({
+            activePage: name
+        })
+    }
+
+    checkPageName(path) {
+        if (path === '/') {
+            this.changePage('main')
+        } else if (path === '/skills') {
+            this.changePage('skills')
+        } else if (path === '/experience') {
+            this.changePage('experience')
+        } else if (path === '/projects') {
+            this.changePage('projects')
+        }
+    }
+
+    togglePageName(action) {
+        if (action === 'hide') {
+            animatePosition(this.pageName, 'top', '33px')
+        } 
+        if (action === 'show') {
+            animatePosition(this.pageName, 'top', '0px')
         }
         
     }
 
+    componentDidMount() {
+        this.checkPageName(window.location.pathname);
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props !== prevProps) {
+            this.checkPageName(window.location.pathname)
+        }
+        this.state.navigationOpen ? this.togglePageName('hide') : this.togglePageName('show')
+        
+    }
+
     render() {
-        // const { navigationOpen } = this.state
-        // console.log(navigationOpen)
+
+        
+
         return (
             <Fragment>
                 <nav>
+                    <div className="nav-page-name" ref={ ref => this.pageName = ref}>
+                        <span>{this.state.activePage}</span> page
+                    </div>
                     <button className={`nav-button ${this.state.navigationOpen ? 'active' : ''}`} onClick={() => {
                         this.setState({
                             navigationOpen: !this.state.navigationOpen
@@ -27,8 +77,14 @@ class PagesWrapper extends Component {
                         <i className="fas fa-sort-amount-down-alt nav-button__icon"></i>
                         <div className="nav-button__text">Navigate</div>
                     </button>
-                    <NavigationMenu openMenu={this.state.navigationOpen}/>
+                    <div className="toggler" style={this.state.navigationOpen ? {display: 'block'} : {display: 'none'}} onClick={() => {
+                        this.setState({
+                            navigationOpen: !this.state.navigationOpen
+                        })
+                    }}></div>
+                    <NavigationMenu openMenu={this.state.navigationOpen} />
                 </nav>
+                
                 <header>
                     <div className="profile-container">
                         <div className="profile">
@@ -77,29 +133,6 @@ class PagesWrapper extends Component {
     } 
 }
 
-class NavigationMenu extends Component {
 
-    render() {
-
-        return (
-            <div className={`nav-menu ${this.props.openMenu ? 'open' : ''}`}>
-                <NavLink to="/" className="nav-menu__item">
-                    <div className="nav-menu__item--text">Main</div>
-                </NavLink>
-                <NavLink to="/" className="nav-menu__item">
-                    <div className="nav-menu__item--text">Skills</div>
-                </NavLink>
-                <NavLink to="/" className="nav-menu__item">
-                    <div className="nav-menu__item--text">Experience</div>
-                </NavLink>
-                <NavLink to="/" className="nav-menu__item">
-                    <div className="nav-menu__item--text">Projects</div>
-                </NavLink>
-                
-            </div>
-            
-        )
-    }
-}
 
 export default withRouter(PagesWrapper)
