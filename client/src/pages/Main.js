@@ -4,6 +4,6 @@ export default class Main extends Component {
     
 
     render() {
-        return <h1>Hohoh</h1> 
+        return <h1>Main page</h1> 
     }
 }

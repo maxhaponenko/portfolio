@@ -11,11 +11,12 @@ export default class NavigationMenu extends Component {
                 item1: false,
                 item2: false,
                 item3: false,
-                item4: false
+                item4: false,
+                item5: false
             }
         };
-        this.openSpeedSettings = [ 50, 100, 150, 250 ];
-        this.closeSpeedSettings = [ 200, 150, 100, 50 ]
+        this.openSpeedSettings = [ 50, 100, 150, 250, 300 ];
+        this.closeSpeedSettings = [ 200, 150, 100, 50, 25 ]
     }
 
     menuItems(action) {
@@ -36,6 +37,8 @@ export default class NavigationMenu extends Component {
                         animatePosition(this.item3, 'right', moveSize)
                     } else if (i+1 === 4) {
                         animatePosition(this.item4, 'right', moveSize)
+                    } else if (i+1 === 5) {
+                        animatePosition(this.item5, 'right', moveSize)
                     }
                 }) 
             }, action === 'open' ? this.openSpeedSettings[i] : this.closeSpeedSettings[i])
@@ -70,6 +73,10 @@ export default class NavigationMenu extends Component {
                 <NavLink to="/projects" ref={ref => this.item4 = ref} className={`nav-menu__item`}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Projects</div>
+                </NavLink>
+                <NavLink to="/education" ref={ref => this.item5 = ref} className={`nav-menu__item`}>
+                    <span className="pointer"></span>
+                    <div className="nav-menu__item--text">Education</div>
                 </NavLink>
                 
             </div>

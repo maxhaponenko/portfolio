@@ -1,6 +1,8 @@
 
 export const publicPaths = {
-    home: '/',
-    registrationPage: '/registration',
-    loginPage: '/login'
+    main: '/',
+    projects: '/projects',
+    skills: '/skills',
+    experience: '/experience',
+    education: '/education',
 }

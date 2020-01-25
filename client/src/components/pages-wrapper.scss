@@ -58,7 +58,6 @@ header {
     height: 100%;
     position: relative;
     margin-left: 40px;
-    // box-shadow: $shadow-blue;
     display: flex;
     justify-content: flex-start;
 }
@@ -235,7 +234,7 @@ nav {
         right: 0px;
         top: 0px;
         z-index: 0;
-        background: transparent;
+        background: rgba(0,0,0,0.05);
         display: none;
     }
     .nav-menu {
@@ -323,4 +322,9 @@ nav {
             }
         }
     }
+}
+
+h1 {
+    margin: 0 auto;
+    text-align: center;
 }
