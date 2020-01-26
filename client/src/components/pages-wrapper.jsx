@@ -10,6 +10,7 @@ class PagesWrapper extends Component {
         super(props);
         this.state = {
             navigationOpen: false,
+            navButtonDisabled: false,
             pages: {
                 main: 'main',
                 skills: 'skills',
@@ -35,6 +36,8 @@ class PagesWrapper extends Component {
             this.changePage('experience')
         } else if (path === '/projects') {
             this.changePage('projects')
+        } else if (path === '/education') {
+            this.changePage('education')
         }
     }
 
@@ -59,30 +62,52 @@ class PagesWrapper extends Component {
         
     }
 
+    closeNavigationMenu = () => {
+        this.setState({
+            navigationOpen: false
+        })
+    }
+
+    enableNavButton(timeout) {
+        setTimeout(() => {
+            this.setState({
+                navButtonDisabled: false
+            })
+        }, timeout)
+    }
+
+
     render() {
 
         
 
         return (
             <Fragment>
+                
                 <nav>
-                    <div className="nav-page-name" ref={ ref => this.pageName = ref}>
-                        <span>{this.state.activePage}</span> page
-                    </div>
-                    <button className={`nav-button ${this.state.navigationOpen ? 'active' : ''}`} onClick={() => {
-                        this.setState({
-                            navigationOpen: !this.state.navigationOpen
-                        })
-                    }}>
-                        <i className="fas fa-sort-amount-down-alt nav-button__icon"></i>
-                        <div className="nav-button__text">Navigate</div>
-                    </button>
-                    <div className="toggler" style={this.state.navigationOpen ? {display: 'block'} : {display: 'none'}} onClick={() => {
+                    <div className="toggler" style={this.state.navigationOpen ? { display: 'block' } : { display: 'none' }} onClick={() => {
                         this.setState({
                             navigationOpen: !this.state.navigationOpen
                         })
                     }}></div>
-                    <NavigationMenu openMenu={this.state.navigationOpen} />
+                    <div className="nav-page-name" ref={ ref => this.pageName = ref}>
+                        <span>{this.state.activePage}</span> page
+                    </div>
+                    <button
+                        className={`nav-button ${this.state.navigationOpen ? 'active' : ''}`}
+                        onClick={() => {
+                            if (!this.state.navButtonDisabled) {
+                                this.setState({
+                                    navigationOpen: !this.state.navigationOpen,
+                                    navButtonDisabled: true
+                                }, this.enableNavButton(200))
+                            }
+                        }}>
+                        <i className="fas fa-sort-amount-down-alt nav-button__icon"></i>
+                        <div className="nav-button__text">Navigate</div>
+                    </button>
+                    
+                    <NavigationMenu openMenu={this.state.navigationOpen} closeMenuCallback={() => this.closeNavigationMenu()} />
                 </nav>
                 
                 <header>
@@ -122,12 +147,15 @@ class PagesWrapper extends Component {
                         </div>
                     </div>
                 </header>
+                
 
                 {this.props.children}
 
+                
                 <footer>
 
                 </footer>
+                
             </Fragment>
         )
     } 

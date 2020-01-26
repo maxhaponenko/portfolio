@@ -4,12 +4,15 @@
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/regular.scss";
 @import './_variables';
+@import './_common';
 
 body {
     background-image: url('../images/bg.png');
     margin: 0;
     font-family: 'Lato', sans-serif;
+    font-weight: 300;
     color: $color-white;
 }
 
 @import '../../components/pages-wrapper.scss';
+@import '../../pages/main/main.scss';

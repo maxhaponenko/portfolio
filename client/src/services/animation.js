@@ -11,3 +11,7 @@ export function animatePosition(item, direction, size) {
         item.style.bottom = size
     }
 }
+
+export function animateOpacity(item, opacityLevel) {
+    item.style.opacity = opacityLevel
+}

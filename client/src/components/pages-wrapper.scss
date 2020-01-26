@@ -22,6 +22,7 @@ header {
     left: 20px;
     display: flex;
     justify-content: flex-start;
+    z-index: 0;
     &__photo {
         width: 56px;
         height: 56px;
@@ -60,6 +61,7 @@ header {
     margin-left: 40px;
     display: flex;
     justify-content: flex-start;
+    z-index: 0;
 }
 .rates {
     &__hourly {
@@ -146,12 +148,27 @@ header {
     }
 }
 
+.toggler {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+    display: none;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
 nav {
     position: fixed;
     width: 259px;
     height: 100px;
     right: 0px;
     top: 0px;
+    z-index: 99999;
     .nav-page-name {
         position: relative;
         color: $color-font-grey;
@@ -160,10 +177,10 @@ nav {
         font-weight: 300;
         height: 20px;
         margin: 5px 0 5px 0;
-        width: auto;
+        width: 260px;
         vertical-align: middle;
         text-align: center;
-        line-height: 17px;
+        line-height: 20px;
         -webkit-transition: 0.3s ease-in-out;
         -moz-transition: 0.3s ease-in-out;
         -o-transition: 0.3s ease-in-out;
@@ -178,7 +195,6 @@ nav {
         max-width: 260px;
         max-height: 37px;
         position: relative;
-        // top: 29px;
         box-shadow: $shadow-black-blue-lined;
         background: #2896fd;
         background: linear-gradient(to right, #2896fd 0%, #1d6cb7 52%, #37485e 100%);
@@ -189,27 +205,38 @@ nav {
         $border: 1px;
         background-clip: padding-box; /* !important */
         border: $border solid transparent;  /* !important */
+
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+
         // Children positioning
         display: flex;
         justify-content: flex-start;
-        // Border gradient styles
-        &:before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            z-index: -1;
-            margin: -$border; /* !importanté */
-            border-radius: inherit; /* !importanté */
-            background: linear-gradient(to right, #2E76BC, #305A86);
+        i {
+            color: #6eadff;
         }
         // Disable blue button outline
         &:focus, &:active {
             outline: none !important;
         }
-
+        &:hover {
+            box-shadow: $shadow-black-blue-lined--light;
+            -webkit-transition: 0.25s ease-in-out;
+            -moz-transition: 0.25s ease-in-out;
+            -o-transition: 0.25s ease-in-out;
+            transition: 0.25s ease-in-out;
+        }
         &.active {
-            z-index: 3;
-            background: #4F4F4F;
+            box-shadow: $shadow-black-blue-lined--light;
+            i {
+                color: $color-font-grey;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            
         }
 
         // Other elements of the block
@@ -227,16 +254,7 @@ nav {
             margin-left: 15px;
         }
     }
-    .toggler {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        right: 0px;
-        top: 0px;
-        z-index: 0;
-        background: rgba(0,0,0,0.05);
-        display: none;
-    }
+    
     .nav-menu {
         position: relative;
         display: flex;
@@ -244,8 +262,7 @@ nav {
         top: 4px;
         right: 0px;
         width: 310px;
-        z-index: 2;
-        // right: -350px;
+        z-index: 100;
         -webkit-transition: 0.5s ease-in-out;
         -moz-transition: 0.5s ease-in-out;
         -o-transition: 0.5s ease-in-out;
@@ -255,28 +272,23 @@ nav {
         &__item {
             position: relative;
             margin: 2px 0 2px 0;
-            background: #4F4F4F;
-            height: 29px;
+            background: #2896fd;
+            background: linear-gradient(to right, #2896fd 0%, #1d6cb7 52%, #37485e 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2896fd', endColorstr='#37485e' GradientType=1 );
+            height: auto;
+            padding: 5px 0px 5px 0px;
             width: 310px;
             right: -310px;
             border-bottom-left-radius: 10px;
             border-top-left-radius: 10px;
             text-decoration: none;
             color: $color-white;
-            
-            display: flex;
+            display: block;
             -webkit-transition: 0.3s ease-in-out;
             -moz-transition: 0.3s ease-in-out;
             -o-transition: 0.3s ease-in-out;
             transition: 0.3s ease-in-out;
-            &.open {
-                right: 0px;
-                width: 310px;
-                -webkit-transition: 0.3s ease-in-out;
-                -moz-transition: 0.3s ease-in-out;
-                -o-transition: 0.3s ease-in-out;
-                transition: 0.3s ease-in-out;
-            }
+           
             &::before {
                 content: '';
                 border-radius: 10px;
@@ -287,12 +299,13 @@ nav {
             }
             &:hover {
                 width: 310px;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
                 -webkit-transition: 0.1s ease-in-out;
                 -moz-transition: 0.1s ease-in-out;
                 -o-transition: 0.1s ease-in-out;
                 transition: 0.1s ease-in-out;
                 .nav-menu__item--text {
-                    color: $color-blue;
+                    color: $color-white;
                 }
             }
 
@@ -302,14 +315,16 @@ nav {
                     width: 0px;
                     height: 0px;
                     border-top: 5px solid transparent;
-                    border-left: 6px solid $color-blue;
+                    border-left: 6px solid $color-font-grey;
                     border-bottom: 5px solid transparent;
-                    align-self: center;
                     margin-left: -1px;
                     position: absolute;
+                    left: 0px;
+                    top: 50%;
+                    transform: translate(0, -50%);
                 }
                 .nav-menu__item--text {
-                    color: $color-blue;
+                    color: $color-white;
                 }
 
             }
@@ -319,7 +334,17 @@ nav {
                 font-size: 17px;
                 letter-spacing: 2px;
                 font-weight: 300;
+                span {
+                    font-size: 14px;
+                    line-height: 17px;
+                    letter-spacing: 1.3px;
+                    padding-bottom: 3px;
+                    font-weight: 300;
+                    color: #dee2e6;
+                    display: block;
+                }
             }
+            
         }
     }
 }

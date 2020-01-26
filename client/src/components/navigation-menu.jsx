@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { animatePosition } from '../services/animation';
+import { publicPaths } from '../routes/paths';
 
-export default class NavigationMenu extends Component {
+class NavigationMenu extends Component {
 
     constructor(props) {
         super(props);
@@ -19,7 +20,7 @@ export default class NavigationMenu extends Component {
         this.closeSpeedSettings = [ 200, 150, 100, 50, 25 ]
     }
 
-    menuItems(action) {
+    menuAction(action) {
         for (let i = this.openSpeedSettings.length - 1; i >= 0; i--) {
             setTimeout(() => {
                 this.setState({
@@ -49,32 +50,48 @@ export default class NavigationMenu extends Component {
 
     componentDidUpdate(prevProps) {
         if ((this.props.openMenu !== prevProps.openMenu) && this.props.openMenu === true) {
-            this.menuItems('open')
+            this.menuAction('open')
         } else if ((this.props.openMenu !== prevProps.openMenu) && this.props.openMenu === false) {
-            this.menuItems('close')
+            this.menuAction('close')
+        }
+    }
+
+    handleNavigationAction(pageName) {
+        let path = this.props.history.location.pathname;
+        if (!path.includes(pageName)){
+            setTimeout(() => {
+                this.props.closeMenuCallback()
+            }, 250)
+        } else if (path === pageName) {
+            return false 
+        } else {
+            setTimeout(() => {
+                this.props.closeMenuCallback()
+            }, 250)
         }
     }
 
     render() {
         return (
             <div className={`nav-menu`}>
-                <NavLink exact to="/" ref={ref => this.item1 = ref} className={`nav-menu__item`}>
+                <NavLink exact to="/" ref={ref => this.item1 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.main)} >
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Main</div>
                 </NavLink>
-                <NavLink to="/skills" ref={ref => this.item2 = ref} className={`nav-menu__item`}>
-                    <span className="pointer"></span>
-                    <div className="nav-menu__item--text">Skills</div>
-                </NavLink>
-                <NavLink to="/experience" ref={ref => this.item3 = ref} className={`nav-menu__item`}>
-                    <span className="pointer"></span>
-                    <div className="nav-menu__item--text">Experience</div>
-                </NavLink>
-                <NavLink to="/projects" ref={ref => this.item4 = ref} className={`nav-menu__item`}>
+                <NavLink to="/projects" ref={ref => this.item2 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.projects)}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Projects</div>
                 </NavLink>
-                <NavLink to="/education" ref={ref => this.item5 = ref} className={`nav-menu__item`}>
+                <NavLink to="/skills" ref={ref => this.item3 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.skills)}>
+                    <span className="pointer"></span>
+                    <div className="nav-menu__item--text">Skills<span>Technologies, Frameworks, Libs, Tools</span></div>
+                    
+                </NavLink>
+                <NavLink to="/experience" ref={ref => this.item4 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.experience)}>
+                    <span className="pointer"></span>
+                    <div className="nav-menu__item--text">Experience <span>Timeline and projects I was involved in</span></div>
+                </NavLink>
+                <NavLink to="/education" ref={ref => this.item5 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.education)}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Education</div>
                 </NavLink>
@@ -84,3 +101,5 @@ export default class NavigationMenu extends Component {
         )
     }
 }
+
+export default withRouter(NavigationMenu)
