@@ -29,17 +29,19 @@ class NavigationMenu extends Component {
                         [`item${i+1}`] : action ==='open' ? true : false
                     }
                 }, () => {
-                    let moveSize = action === 'open' ? '50px' : '-310px'
+                    let moveItemSize = action === 'open' ? '50px' : '-300px'
+                    let moveMenuBlockSize = action === 'open' ? '0px' : '-300px'
                     if (i+1 === 1) {
-                        animatePosition(this.item1, 'right', moveSize)
+                        animatePosition(this.menuBlock, 'right', moveMenuBlockSize)
+                        animatePosition(this.item1, 'right', moveItemSize)
                     } else if (i+1 === 2) {
-                        animatePosition(this.item2, 'right', moveSize)
+                        animatePosition(this.item2, 'right', moveItemSize)
                     } else if (i+1 === 3) {
-                        animatePosition(this.item3, 'right', moveSize)
+                        animatePosition(this.item3, 'right', moveItemSize)
                     } else if (i+1 === 4) {
-                        animatePosition(this.item4, 'right', moveSize)
+                        animatePosition(this.item4, 'right', moveItemSize)
                     } else if (i+1 === 5) {
-                        animatePosition(this.item5, 'right', moveSize)
+                        animatePosition(this.item5, 'right', moveItemSize)
                     }
                 }) 
             }, action === 'open' ? this.openSpeedSettings[i] : this.closeSpeedSettings[i])
@@ -71,9 +73,9 @@ class NavigationMenu extends Component {
         }
     }
 
-    render() {
+    render() { 
         return (
-            <div className={`nav-menu`}>
+            <div ref={ref => this.menuBlock = ref}  className={`nav-menu`}>
                 <NavLink exact to="/" ref={ref => this.item1 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.main)} >
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Main</div>

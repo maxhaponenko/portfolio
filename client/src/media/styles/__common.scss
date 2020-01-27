@@ -4,3 +4,20 @@
     height: auto;
     margin: 0 auto;
 }
+body {
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: $color-wet-grey;
+
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 100px;
+        background-color: rgba(40,150,253, 0.8);
+        &:hover {
+            background-color: rgba(40,150,253, 1);
+        }
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $color-wet-grey;
+    }
+}
