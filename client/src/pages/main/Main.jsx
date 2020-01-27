@@ -28,7 +28,7 @@ export default class Main extends Component {
                             </div>
                             <div className="col-6 main__container">
                                 <div className="main__container-heading">More</div> 
-                                <div className="main__container-contentBlock contentBlock_glow">
+                                <div className="main__container-contentBlock pl-4 contentBlock_glow">
                                     <div className="fast-links__row mb-3">
                                         <button className="btn fast-links__button">Projects</button>
                                         <button className="btn fast-links__button">Education</button>
