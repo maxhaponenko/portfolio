@@ -18,6 +18,7 @@ class PagesWrapper extends Component {
                 projects: 'projects'
             },
             activePage: 'main',
+            firstSurnameLetter: 'H'
         }
     }
 
@@ -76,6 +77,13 @@ class PagesWrapper extends Component {
         }, timeout)
     }
 
+    switchFirstLetter() {
+        if (this.state.firstSurnameLetter === 'H') {
+            this.setState({firstSurnameLetter: 'G'})
+        } else {
+            this.setState({firstSurnameLetter: 'H'})
+        }
+    }
 
     render() {
 
@@ -147,13 +155,16 @@ class PagesWrapper extends Component {
                         </div>
                     </div>
                 </header>
-                
-
-                {this.props.children}
-
-                
+                <div style={{paddingBottom: '100px'}}>
+                    {this.props.children}
+                </div>
                 <footer>
-
+                        <div className="copyright">Copyright 2020</div>
+                        <div className="contacts">
+                            <div>gaponenko.mm@gmail.com</div>
+                            <div>+380676758482</div>
+                        </div>
+                        <div className="designed" onClick={() => this.switchFirstLetter()}>designed by Max <span>{this.state.firstSurnameLetter}</span>aponenko</div>
                 </footer>
                 
             </Fragment>
