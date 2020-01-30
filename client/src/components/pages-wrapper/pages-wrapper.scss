@@ -1,3 +1,6 @@
+@import '../../media/styles/_variables';
+
+
 header {
     display: flex;
     justify-content: flex-start;
@@ -62,6 +65,9 @@ header {
     display: flex;
     justify-content: flex-start;
     z-index: 0;
+    @media (max-width: 1070px) {
+        display: none;
+    }
 }
 .rates {
     &__hourly {
@@ -353,10 +359,16 @@ body {
     min-height: 100vh;
     position: relative;
 }
+
+.page-frame {
+    min-height: calc(100vh - 100px - 50px);
+    padding-bottom: 100px;
+}
+
+
 footer {
     width: 100%;
     height: 50px;
-    position: absolute;
     bottom: 0px;
     display: flex;
     justify-content: space-between;
@@ -369,7 +381,6 @@ footer {
     }
     .contacts {
         width: auto;
-        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -388,5 +399,38 @@ footer {
         &:hover {
             cursor: pointer;
         }
+    }
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 65px;
+        .contacts {
+            width: 100%;
+            justify-content: space-evenly;
+            > div:first-child {
+                margin-right: 0px;
+            }
+        }
+        .designed {
+            text-align: center;
+            width: 100%;
+            height: 30px;
+        }
+        .copyright {
+            display: none;
+        }
+    }
+    @media (max-width: 400px) {
+        
+        .contacts {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            > div {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
     }
 }

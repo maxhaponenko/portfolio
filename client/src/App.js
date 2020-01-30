@@ -6,7 +6,7 @@ import Skills from './pages/Skills';
 import Education from './pages/Education';
 import Experience from './pages/Experience';
 import { publicPaths } from './routes/paths';
-import PagesWrapper from './components/pages-wrapper';
+import PagesWrapper from './components/pages-wrapper/pages-wrapper';
 
 class App extends React.Component {
     render() {

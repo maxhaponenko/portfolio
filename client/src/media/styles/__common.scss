@@ -6,6 +6,9 @@
 }
 body {
     overflow-x: hidden;
+    overflow-y: scroll;
+    border-left: 4px solid #436085;
+    position: static !important;
     &::-webkit-scrollbar {
         width: 6px;
         background-color: $color-wet-grey;
@@ -22,3 +25,5 @@ body {
         background-color: $color-wet-grey;
     }
 }
+
+

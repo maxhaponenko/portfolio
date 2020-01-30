@@ -10,7 +10,7 @@ export default class Main extends Component {
                 <div id="mainSection" className="main">
                     <div className="wrapper">
                         <div className="row m-0">
-                            <div className="col-6 main__container">
+                            <div className="col-xl-6 col-md-7 col-sm-12 col-12 main__container">
                                 <div className="main__container-heading">Summary</div> 
                                 <div className="main__container-contentBlock">
                                     <p><span>Status:</span> open to proposals</p>
@@ -26,10 +26,10 @@ export default class Main extends Component {
                                     </p>
                                 </div>
                             </div>
-                            <div className="col-6 main__container">
+                            <div className="col-xl-6 col-md-5 col-sm-12 col-12 main__container">
                                 <div className="main__container-heading">More</div> 
                                 <div className="main__container-contentBlock pl-4 contentBlock_glow">
-                                    <div className="fast-links__row mb-3">
+                                    <div className="fast-links__row">
                                         <button className="btn fast-links__button">Projects</button>
                                         <button className="btn fast-links__button">Education</button>
                                     </div>
@@ -41,11 +41,11 @@ export default class Main extends Component {
                             </div>
                         </div>
                         <div className="row mt-5 mb-5 m-0">
-                            <div className="col-6 cv-questionBlock">
+                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 cv-questionBlock">
                                 <h2>Need <span>pdf version</span><br /> of my CV?</h2>
                             </div>
-                            <div className="col-6">
-                                <div className="cv-downloadBlock ml-5">
+                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div className="cv-downloadBlock">
                                     <div className="cv-square">
                                         <div className="cv-square__doc">CV.pdf</div>
                                         <div className="cv-square__description">on the position of Frontend Developer</div>

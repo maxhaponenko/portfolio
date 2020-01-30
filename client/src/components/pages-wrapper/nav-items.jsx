@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
-import { animatePosition } from '../services/animation';
-import { publicPaths } from '../routes/paths';
+import { animatePosition } from '../../services/animation';
+import { publicPaths } from '../../routes/paths';
 
-class NavigationMenu extends Component {
+class NavItems extends Component {
 
     constructor(props) {
         super(props);
@@ -104,4 +104,4 @@ class NavigationMenu extends Component {
     }
 }
 
-export default withRouter(NavigationMenu)
+export default withRouter(NavItems)
