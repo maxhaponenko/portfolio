@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { publicPaths } from '../../routes/paths';
 import './main.scss'
 
 export default class Main extends Component {
@@ -9,7 +10,7 @@ export default class Main extends Component {
             <Fragment>
                 <div id="mainSection" className="main">
                     <div className="wrapper">
-                        <div className="row m-0">
+                        <div id="summary-info" className="row m-0">
                             <div className="col-xl-6 col-md-7 col-sm-12 col-12 main__container">
                                 <div className="main__container-heading">Summary</div> 
                                 <div className="main__container-contentBlock">
@@ -30,29 +31,36 @@ export default class Main extends Component {
                                 <div className="main__container-heading">More</div> 
                                 <div className="main__container-contentBlock pl-4 contentBlock_glow">
                                     <div className="fast-links__row">
-                                        <button className="btn fast-links__button">Projects</button>
-                                        <button className="btn fast-links__button">Education</button>
+                                        <button className="btn fast-links__button" onClick={() => {
+                                            this.props.history.push(publicPaths.projects)
+                                        }}>Projects</button>
+                                        <button className="btn fast-links__button" onClick={() => {
+                                            this.props.history.push(publicPaths.education)
+                                        }}>Education</button>
                                     </div>
                                     <div className="fast-links__row">
-                                        <button className="btn fast-links__button">Skills</button>
-                                        <button className="btn fast-links__button">Experience</button>
+                                        <button className="btn fast-links__button" onClick={() => {
+                                            this.props.history.push(publicPaths.skills)
+                                        }}>Skills</button>
+                                        <button className="btn fast-links__button" onClick={() => {
+                                            this.props.history.push(publicPaths.experience)
+                                        }}>Experience</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="row mt-5 mb-5 m-0">
+                        <div id="need-pdf-version" className="row mt-5 mb-5 m-0">
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 cv-questionBlock">
                                 <h2>Need <span>pdf version</span><br /> of my CV?</h2>
                             </div>
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div className="cv-downloadBlock">
+                                <div className="cv-downloadBlock cv-downloadBlock__glow">
                                     <div className="cv-square">
                                         <div className="cv-square__doc">CV.pdf</div>
                                         <div className="cv-square__description">on the position of Frontend Developer</div>
                                     </div>
-                                    <button className="btn btn-download btn-download_aqua">
+                                    <button className="btn btn-download btn-download--aqua">
                                         Download
-
                                     </button>
                                 </div>
                             </div>

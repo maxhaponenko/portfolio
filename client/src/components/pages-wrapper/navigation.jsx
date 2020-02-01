@@ -8,6 +8,8 @@ class Navigation extends React.Component {
         this.state = {
             navigationOpen: false,
             navButtonDisabled: false,
+            navigationIsHidden: false,
+            hiddenNavigationIsOpened: false,
             pages: {
                 main: 'main',
                 skills: 'skills',
@@ -15,7 +17,8 @@ class Navigation extends React.Component {
                 projects: 'projects'
             },
             activePage: 'main',
-            firstSurnameLetter: 'H'
+            firstSurnameLetter: 'H',
+            
         }
     }
 
@@ -50,6 +53,8 @@ class Navigation extends React.Component {
 
     componentDidMount() {
         this.checkPageName(window.location.pathname);
+        document.addEventListener('scroll', this.calculateNavigationMode.bind(this))
+        this.calculateNavigationMode()
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -57,12 +62,37 @@ class Navigation extends React.Component {
             this.checkPageName(window.location.pathname)
         }
         this.state.navigationOpen ? this.togglePageName('hide') : this.togglePageName('show')
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.calculateNavigationMode)
+    }
+
+    calculateNavigationMode() {
+        const pageHeight = document.body.clientHeight;
+        const windowHeight = window.innerHeight;
+        const scrollTop = window.scrollY;
+        const leftToScrollToGetBottom = pageHeight - windowHeight - scrollTop;
+        const shouldChangePosition = window.innerWidth < 500;
+
+        if (shouldChangePosition) {
+            if (leftToScrollToGetBottom < 30 && this.state.navigationIsHidden === false) {
+                this.setState({
+                    navigationIsHidden: true
+                }, this.closeNavigationMenu())
+            } else if (leftToScrollToGetBottom >= 30 && this.state.navigationIsHidden === true) {
+                this.setState({
+                    navigationIsHidden: false
+                })
+            }
+        }
         
     }
 
     closeNavigationMenu = () => {
         this.setState({
-            navigationOpen: false
+            navigationOpen: false,
+            hiddenNavigationIsOpened: false
         })
     }
 
@@ -74,23 +104,47 @@ class Navigation extends React.Component {
         }, timeout)
     }
 
+
     render() {
+        
+        const getHiddenNavigationStyles = () => {
+            const hiddenNavStyles = {
+                right: '-133px',
+                bottom: '35px'
+            }
+            const notHiddenNavStyles = {
+                right: '0px',
+                bottom: '0px'
+            }
+            if (this.state.navigationIsHidden && !this.state.hiddenNavigationIsOpened) {
+                return hiddenNavStyles
+            } else {
+                return notHiddenNavStyles
+            }
+        }
+
         return (
-            <nav>
+            <nav style={getHiddenNavigationStyles()}>
                 
-                <div className="toggler" style={this.state.navigationOpen ? { display: 'block' } : { display: 'none' }} onClick={() => {this.setState({navigationOpen: !this.state.navigationOpen})}}></div>
+                <div className="toggler" style={this.state.navigationOpen ? { display: 'block' } : { display: 'none' }} onClick={() => {this.closeNavigationMenu()}}></div>
                 
-                <div className="nav-page-name" ref={ref => this.pageName = ref}>
+                <div style={this.state.navigationIsHidden && !this.state.hiddenNavigationIsOpened ? { display: 'none'} : { display: 'block' }} className="nav-page-name" ref={ref => this.pageName = ref}>
                     <span>{this.state.activePage}</span> page
                 </div>
                 
                 <button
                     className={`nav-button ${this.state.navigationOpen ? 'active' : ''}`}
                     onClick={() => {
-                        if (!this.state.navButtonDisabled) {
+                        if (!this.state.navButtonDisabled && !this.state.navigationIsHidden) {
                             this.setState({
                                 navigationOpen: !this.state.navigationOpen,
                                 navButtonDisabled: true
+                            }, this.enableNavButton(200))
+                        } else if (!this.state.navButtonDisabled && this.state.navigationIsHidden) {
+                            this.setState({
+                                navigationOpen: !this.state.navigationOpen,
+                                navButtonDisabled: true,
+                                hiddenNavigationIsOpened: !this.state.hiddenNavigationIsOpened
                             }, this.enableNavButton(200))
                         }
                     }}

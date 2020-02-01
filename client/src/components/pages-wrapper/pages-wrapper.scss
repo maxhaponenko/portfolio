@@ -40,21 +40,32 @@ header {
         }
     }
     &__text {
-        margin-left: 13px;
+        margin-left: 10px;
         line-height: 20px;
+        font-size: 21px;
         align-self: center;
         font-weight: 300;
         cursor: default;
         &--name {
             text-transform: uppercase;
-            font-size: 21px;
         }
         &--role {
-            font-size: 21px;
             color: $color-blue;
             letter-spacing: 1px;
         }
     }
+    @media (max-width: 620px) {
+        width: 230px;
+        height: 46px;
+        &__photo {
+            width: 46px;
+            height: 46px;
+        };
+        &__text {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    } 
 }
 
 .rates-container {
@@ -162,10 +173,10 @@ header {
     top: 0px;
     z-index: -1;
     display: none;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    transition: 0.5s all;
 }
 
 nav {
@@ -175,6 +186,10 @@ nav {
     right: 0px;
     top: 0px;
     z-index: 99999;
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
     .nav-page-name {
         position: relative;
         color: $color-font-grey;
@@ -354,6 +369,70 @@ nav {
         }
     }
 }
+
+@media (max-width: 620px) {
+    nav {
+        .nav-page-name {
+            display: block;
+            width: 180px;
+            right: 0;
+            margin: 2px 0 2px auto;
+        }
+        .nav-button {
+            right: -80px;
+            min-height: 34px;
+            max-height: 34px;
+            // Other elements of the block
+            &__icon {
+                transform: scaleX(-1.4) scaleY(1.2);
+            }
+            &__text {
+                font-size: 18px;
+            }
+        }
+        .toggler {
+            background-color: rgba(0,0,0,0.1);
+            -webkit-transition: 0.5s ease-in-out;
+            -moz-transition: 0.5s ease-in-out;
+            -o-transition: 0.5s ease-in-out;
+            transition: 0.5s ease-in-out;
+        }
+    }
+}
+@media (max-width: 499px) {
+    nav {
+        top: unset;
+        bottom: 0;
+        // .nav-page-name {
+        //     display: block;
+        //     width: 180px;
+        //     right: 0;
+        //     margin: 2px 0 2px auto;
+        // }
+        .nav-button {
+            border-bottom-left-radius: 25px 70%;
+            border-top-left-radius: 10px 30%;
+            // Other elements of the block
+            &__icon {
+                transform: scaleY(-1) scaleX(-1.2);
+            }
+            // &__text {
+            //     font-size: 18px;
+            // }
+        }
+        // .toggler {
+        //     background-color: rgba(0,0,0,0.1);
+        //     -webkit-transition: 0.5s ease-in-out;
+        //     -moz-transition: 0.5s ease-in-out;
+        //     -o-transition: 0.5s ease-in-out;
+        //     transition: 0.5s ease-in-out;
+        // }
+        .nav-menu {
+            top: -271px;
+        }
+    }
+}
+
 body {
     height: auto;
     min-height: 100vh;
@@ -363,6 +442,12 @@ body {
 .page-frame {
     min-height: calc(100vh - 100px - 50px);
     padding-bottom: 100px;
+    @media (max-width: 767px) {
+        min-height: calc(100vh - 100px - 65px);
+    }
+    @media (max-width: 400px) {
+        min-height: calc(100vh - 100px - 90px);
+    }
 }
 
 
@@ -421,7 +506,7 @@ footer {
         }
     }
     @media (max-width: 400px) {
-        
+        height: 90px;
         .contacts {
             width: 100%;
             flex-wrap: wrap;
@@ -430,6 +515,9 @@ footer {
                 width: 100%;
                 text-align: center;
             }
+        }
+        .designed {
+            height: 34px;
         }
         
     }
