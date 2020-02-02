@@ -59,6 +59,7 @@ export const technicalSkills = [
         experience: 1,
         expType: 'Months'
     },
+    
 ];
 export const libraries = [
     {

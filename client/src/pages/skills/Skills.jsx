@@ -20,7 +20,7 @@ export default class Skills extends Component {
                 }
             }
             let postfix = showExpPostfix()
-            let skillItem = `<div key={${index}} class="items-list-block__item">${item.name} <span>${item.experience}${postfix}</span></div>`
+            let skillItem = `<div class="items-list-block__item">${item.name} <span>${item.experience}${postfix}</span></div>`
             technicalSkillsObjects.push(skillItem)
         })
 
