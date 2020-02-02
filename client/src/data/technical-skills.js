@@ -1,33 +1,33 @@
 export const technicalSkills = [
     {
         name: 'HTML, CSS',
-        experience: 2000,
-        expType: 'HRS'
+        experience: 16,
+        expType: 'Months'
     },
     {
         name: 'SCSS',
-        experience: 900,
-        expType: 'HRS'
+        experience: 12,
+        expType: 'Months'
     },
     {
         name: 'Bootstrap',
-        experience: 900,
-        expType: 'HRS'
+        experience: 6,
+        expType: 'Months'
     },
     {
         name: 'Pug / Jade',
-        experience: 50,
-        expType: 'HRS'
+        experience: 1,
+        expType: 'Months'
     },
     {
         name: 'JavaScript (ES6+)',
-        experience: 1100,
-        expType: 'HRS'
+        experience: 10,
+        expType: 'Months'
     },
     {
         name: 'React & Redux',
-        experience: 700,
-        expType: 'HRS'
+        experience: 6,
+        expType: 'Months'
     },
     {
         name: 'Node.js',
@@ -51,9 +51,14 @@ export const technicalSkills = [
     },
     {
         name: 'Photoshop',
-        experience: 600,
-        expType: 'HRS'
+        experience: 4,
+        expType: 'Months'
     },
+    {
+        name: 'InVision Studio',
+        experience: 1,
+        expType: 'Months'
+    }
 ];
 export const libraries = [
     {

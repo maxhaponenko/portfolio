@@ -1,0 +1,45 @@
+@import '../../media/styles/_variables';
+
+
+.fast-links--compact {
+    &__row {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        > * {
+            margin-right: 18px;
+            margin-bottom: 18px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &__button {
+        width: 120px;
+        height: 31px;
+        border-radius: 10px;
+        box-shadow: $shadow-black;
+        background-color: $color-wet-grey;
+        padding: 0;
+        font-weight: 300;
+        font-size: 17px;
+        color: $color-font-dark-grey;
+        text-align: center;
+        vertical-align: middle;
+
+        
+        
+        &:focus {
+            outline: none !important;
+            box-shadow: $shadow-black;
+        }
+        &:active {
+            outline: none !important;
+        }
+        &:hover {
+            color: $color-blue;
+            box-shadow: $shadow-black-hover;
+        }
+    }
+}

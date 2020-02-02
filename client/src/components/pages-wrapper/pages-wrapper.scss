@@ -441,7 +441,7 @@ body {
 
 .page-frame {
     min-height: calc(100vh - 100px - 50px);
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     @media (max-width: 767px) {
         min-height: calc(100vh - 100px - 65px);
     }

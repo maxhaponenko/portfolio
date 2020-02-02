@@ -29,7 +29,7 @@ export default class Main extends Component {
                             </div>
                             <div className="col-xl-6 col-md-5 col-sm-12 col-12 main__container">
                                 <div className="main__container-heading">More</div> 
-                                <div className="main__container-contentBlock pl-4 contentBlock_glow">
+                                <div className="main__container-contentBlock pl-4 pb-0 contentBlock_glow">
                                     <div className="fast-links__row">
                                         <button className="btn fast-links__button" onClick={() => {
                                             this.props.history.push(publicPaths.projects)
