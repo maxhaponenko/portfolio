@@ -58,7 +58,7 @@ export const technicalSkills = [
         name: 'InVision Studio',
         experience: 1,
         expType: 'Months'
-    }
+    },
 ];
 export const libraries = [
     {

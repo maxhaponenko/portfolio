@@ -32,25 +32,10 @@ export default class Skills extends Component {
                                 Technical skills <span>primary</span>
                             </div>
                             <div className="main__container--padding-sm">
-                                {/* <ColumnListResponsive items={technicalSkills} maxColumns={3} breakpoints={[850, 550]} oneItemMaxHeight={24}/>
-                                <p> -------------------------------------------------------- </p> */}
-                                <ColumnListResponsive items={technicalSkillsObjects} maxColumns={3} breakpoints={[850, 550]} oneItemMaxHeight={24}/>
-                                {/* <p> -------------------------------------------------------- </p>
-                                <div className="items-list-block--column technical-skills">
-                                    {technicalSkills.map((item) => {
-                                        let showExpPostfix = () => {
-                                            if (item.expType) {
-                                                return `+ ${item.expType}`
-                                            } else {
-                                                return ` ${item.expType}`
-                                            }
-                                        }
-                                        return (
-                                        <div className="items-list-block__item">{item.name} <span>{item.experience}{showExpPostfix()}</span>
-                                            </div>
-                                        )
-                                    })}
-                                </div> */}
+                                <ColumnListResponsive 
+                                    items={technicalSkillsObjects} 
+                                    maxColumns={3} 
+                                    breakpoints={[950, 600]}/>
                             </div>
                         </div>
                         <div className="main__container">
@@ -60,10 +45,7 @@ export default class Skills extends Component {
                             <div className="main__container--padding-sm">
                                 <div className="items-list-block--column libraries">
                                     {libraries.map((item) => {
-                                        return (
-                                        <div className="items-list-block__item libraries">{item.name}
-                                            </div>
-                                        )
+                                        return <div className="items-list-block__item libraries">{item.name}</div>
                                     })}
                                 </div>
                             </div>
