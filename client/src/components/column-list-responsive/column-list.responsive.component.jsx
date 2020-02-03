@@ -19,20 +19,17 @@ export default class ColumnListResponsive extends React.Component {
     _getColumnsMatrix() {
         let maxColumns = this.props.maxColumns;
         let breakpoints = this._sortBreakpoints(this.props.breakpoints);
-        console.log(breakpoints)
         let resultObject = {}
         for (let i = 1; i < maxColumns+1; i++) {
             resultObject[i] = breakpoints[breakpoints.length-i]
         }
         this.setState({
             columnMatrix: resultObject
-        }, console.log(resultObject))
-        // console.log(resultObject)
+        })
     }
 
     componentDidMount() {
         this._getColumnsMatrix()
-        // this._sortBreakpoints(this.state.breakpoints)
         setTimeout(() => {
             if (this.getItemHeight() !== undefined) {
                 this.setState({
@@ -41,43 +38,117 @@ export default class ColumnListResponsive extends React.Component {
                 }, this.changeColumnsConfiguration())
             }
         }, 200)
-        
         window.addEventListener('resize', this.changeColumnsConfiguration.bind(this))
-        
-        // this.checkForErrors()
+        this.checkForErrors()
     }
 
     changeColumnsConfiguration(){
         let windowWidth = window.innerWidth;
         let columnMatrix = this.state.columnMatrix;
-        
-        
+        if (this.state.maxColumns === 5) {
+            this.adaptColumnMatrixForFiveColumns(windowWidth, columnMatrix)
+        } else if (this.state.maxColumns === 4) {
+            this.adaptColumnMatrixForFourColumns(windowWidth, columnMatrix)
+        } else if (this.state.maxColumns === 3) {
+            this.adaptColumnMatrixForThreeColumns(windowWidth, columnMatrix)
+        } else if (this.state.maxColumns === 2) {
+            this.adaptColumnMatrixForTwoColumns(windowWidth, columnMatrix)
+        }
+    }
+
+    adaptColumnMatrixForTwoColumns(windowWidth, columnMatrix) {
         if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-1]) {
-
-
-            console.log(this.state.maxColumns + ' columns should be')
-
             if (this.state.displayColumns !== this.state.maxColumns) {
                 this.setState({
                     displayColumns: this.state.maxColumns
-                }, console.log(this.state.maxColumns + ' columns should be'))
+                })
             }
-            
-        } else if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-2] && windowWidth <= columnMatrix[Object.keys(columnMatrix).length-1]) {
-
-
-            console.log((this.state.maxColumns - 1) + ' columns should be')
+        } else if (windowWidth <= columnMatrix[Object.keys(columnMatrix).length-1]) {
             if (this.state.displayColumns !== (this.state.maxColumns - 1)) {
                 this.setState({
                     displayColumns: (this.state.maxColumns - 1)
-                }, console.log((this.state.maxColumns - 1) + ' columns should be'))
+                })
+            }
+        }
+    }
+    adaptColumnMatrixForThreeColumns(windowWidth, columnMatrix) {
+        if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-1]) {
+            if (this.state.displayColumns !== this.state.maxColumns) {
+                this.setState({
+                    displayColumns: this.state.maxColumns
+                })
+            }
+        } else if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-2] && windowWidth <= columnMatrix[Object.keys(columnMatrix).length-1]) {
+            if (this.state.displayColumns !== (this.state.maxColumns - 1)) {
+                this.setState({
+                    displayColumns: (this.state.maxColumns - 1)
+                })
             }
         } else if (windowWidth <= columnMatrix[Object.keys(columnMatrix).length-2]) {
-            console.log((this.state.maxColumns - 2) + ' columns should be')
             if (this.state.displayColumns !== (this.state.maxColumns - 2)) {
                 this.setState({
                     displayColumns: (this.state.maxColumns - 2)
-                }, console.log((this.state.maxColumns - 2) + ' columns should be'))
+                })
+            }
+        }
+    }
+    adaptColumnMatrixForFourColumns(windowWidth, columnMatrix) {
+        if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-1]) {
+            if (this.state.displayColumns !== this.state.maxColumns) {
+                this.setState({
+                    displayColumns: this.state.maxColumns
+                })
+            }
+        } else if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-2] && windowWidth <= columnMatrix[Object.keys(columnMatrix).length-1]) {
+            if (this.state.displayColumns !== (this.state.maxColumns - 1)) {
+                this.setState({
+                    displayColumns: (this.state.maxColumns - 1)
+                })
+            }
+        } else if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-3] && windowWidth <= columnMatrix[Object.keys(columnMatrix).length-2]) {
+            if (this.state.displayColumns !== (this.state.maxColumns - 2)) {
+                this.setState({
+                    displayColumns: (this.state.maxColumns - 2)
+                })
+            }
+        } else if (windowWidth <= columnMatrix[Object.keys(columnMatrix).length-3]) {
+            if (this.state.displayColumns !== (this.state.maxColumns - 3)) {
+                this.setState({
+                    displayColumns: (this.state.maxColumns - 3)
+                })
+            }
+        }
+    }
+    adaptColumnMatrixForFiveColumns(windowWidth, columnMatrix) {
+        if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-1]) {
+            if (this.state.displayColumns !== this.state.maxColumns) {
+                this.setState({
+                    displayColumns: this.state.maxColumns
+                })
+            }
+        } else if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-2] && windowWidth <= columnMatrix[Object.keys(columnMatrix).length-1]) {
+            if (this.state.displayColumns !== (this.state.maxColumns - 1)) {
+                this.setState({
+                    displayColumns: (this.state.maxColumns - 1)
+                })
+            }
+        } else if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-3] && windowWidth <= columnMatrix[Object.keys(columnMatrix).length-2]) {
+            if (this.state.displayColumns !== (this.state.maxColumns - 2)) {
+                this.setState({
+                    displayColumns: (this.state.maxColumns - 2)
+                })
+            }
+        } else if (windowWidth > columnMatrix[Object.keys(columnMatrix).length-4] && windowWidth <= columnMatrix[Object.keys(columnMatrix).length-3]) {
+            if (this.state.displayColumns !== (this.state.maxColumns - 3)) {
+                this.setState({
+                    displayColumns: (this.state.maxColumns - 3)
+                })
+            }
+        } else if (windowWidth <= columnMatrix[Object.keys(columnMatrix).length-4]) {
+            if (this.state.displayColumns !== (this.state.maxColumns - 4)) {
+                this.setState({
+                    displayColumns: (this.state.maxColumns - 4)
+                })
             }
         }
     }
@@ -104,11 +175,7 @@ export default class ColumnListResponsive extends React.Component {
             if (b > a) return -1;
             if (a === b) return 0;
         });
-        console.log(sortedBreakpoints[0])
         return sortedBreakpoints[0]
-        // this.setState({
-        //     breakpoints: sortedBreakpoints
-        // })
     }
 
     render() {
@@ -119,8 +186,8 @@ export default class ColumnListResponsive extends React.Component {
 
 
         const getMaxHeight = () => {
-            let totalItemsHeight = (this.state.oneItemHeight * this.state.items.length) + 50
-            let result = totalItemsHeight / (this.state.displayColumns - 0.1)
+            let totalItemsHeight = (this.state.oneItemHeight * this.state.items.length)
+            let result = (totalItemsHeight / (this.state.displayColumns)) + 20
             console.log(`${result}px`)
             return `${result}px`
         }
