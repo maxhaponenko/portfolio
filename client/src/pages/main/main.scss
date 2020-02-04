@@ -15,9 +15,13 @@
             font-weight: 300;
             color: $color-blue;
             margin-bottom: 10px;
+            line-height: 2rem;
+            padding-bottom: 8px;
             span {
                 font-size: 14px;
                 letter-spacing: 0.5px;
+                line-height: normal;
+                white-space: nowrap;
             }
         }
         &-contentBlock {

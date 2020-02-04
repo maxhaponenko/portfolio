@@ -1,0 +1,39 @@
+@import '../../media/styles/_variables';
+
+.education-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    margin: 10px 0;
+    @media (max-width: 500px) {
+        grid-template-columns: 130px 1fr;
+    }
+    @media (max-width: 400px) {
+        grid-template-columns: 80px 1fr;
+    }
+}
+
+.education-item {
+    &__date {
+        font-size: 12px;
+        text-align: left;
+        color: $color-font-light-grey;
+        padding: 7px 10px 0 0;
+        @media (max-width: 500px) {
+            padding-right: 5px;
+        }
+    }
+    &__description {
+        padding-left: 10px;
+        color: white;
+        &--heading {
+            font-size: 20px;
+        }
+        &--text {
+            font-size: 16px;
+            color: $color-font-dark-grey;
+        }
+        @media (max-width: 500px) {
+            padding-left: 5px;
+        }
+    }
+}
