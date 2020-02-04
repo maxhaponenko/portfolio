@@ -1,0 +1,106 @@
+@import '../../media/styles/_variables';
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 150px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.child-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.experience-item {
+    &__logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: $shadow-black;
+        background-color: white;
+        img {
+            width: inherit;
+            height: inherit;
+        }
+    }
+    &__description {
+        position: relative;
+        &::before {
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(79, 155, 255, 0.1) 0%, rgba(79, 155, 255, 0.5) 50%, rgba(79, 155, 255, 0.1) 100%);
+        }
+        &__company-name {
+            top: 4px;
+            position: relative;
+            font-size: 26px;
+            color: $color-blue;
+            line-height: 1.5rem;
+            padding-left: 20px;
+            span {
+                font-size: 16px;
+                color: $color-font-dark-grey;
+                letter-spacing: 0.5px;
+                font-weight: 300;
+            }
+        }
+    }
+    &__toggler {
+        height: 60px;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+        .date {
+            position: relative;
+            top: 14px;
+            width: 100%;
+            height: 50%;
+            color: $color-blue;
+            font-size: 14px;
+            text-align: right;
+        }
+        .btn-dropdown {
+            position: relative;
+            top: 10px;
+            width: 100%;
+            i {
+                position: absolute;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5px 4.5px 0 4.5px;
+                border-color: #5E5E5E transparent transparent transparent;
+                &:hover {
+                    cursor: pointer;
+                    border-color: $color-blue transparent transparent transparent;
+                }
+            }
+        }
+        &:hover .btn-dropdown i {
+            cursor: pointer;
+            border-color: $color-blue transparent transparent transparent;
+        }
+    }
+    &:before {
+        display: none;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle, rgba(99, 149, 255, 0.2), transparent);
+    }
+    &:hover:before {
+        display: block;
+        .experience-item__toggler .btn-dropdown i {
+            border-color: $color-blue transparent transparent transparent;
+        }
+    }
+}

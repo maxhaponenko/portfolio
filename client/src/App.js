@@ -5,7 +5,7 @@ import Main from './pages/main/Main.jsx';
 import Projects from './pages/Projects';
 import Skills from './pages/skills/Skills.jsx';
 import Education from './pages/education/Education';
-import Experience from './pages/Experience';
+import Experience from './pages/experience/Experience';
 import { publicPaths } from './routes/paths';
 import PagesWrapper from './components/pages-wrapper/pages-wrapper';
 
