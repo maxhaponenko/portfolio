@@ -16,13 +16,15 @@ class App extends React.Component {
             // <Provider store={{}}>
                 <BrowserRouter>
                     <Switch>
-                        <PagesWrapper>
-                            <Route exact path={publicPaths.main} component={Main} />
-                            <Route path={publicPaths.projects} component={Projects} />
-                            <Route path={publicPaths.skills} component={Skills} />
-                            <Route path={publicPaths.education} component={Education} />
-                            <Route path={publicPaths.experience} component={Experience} />
-                        </PagesWrapper>
+                        
+                            <PagesWrapper>
+                                <Route exact path={publicPaths.main} component={Main} />
+                                <Route path={publicPaths.projects} component={Projects} />
+                                <Route path={publicPaths.skills} component={Skills} />
+                                <Route path={publicPaths.education} component={Education} />
+                                <Route path={publicPaths.experience} component={Experience} />
+                            </PagesWrapper>
+                        
 
                     </Switch>
                 </BrowserRouter>
