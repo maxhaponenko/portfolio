@@ -36,7 +36,7 @@ export default class Experience extends Component {
     render() {
 
         return (
-            <div className="wrapper">
+            <div className="wrapper experience">
                 <div className="main__container">
                     <div className="main__container-heading main__container-heading--blue-highlighted">
                         Experience
@@ -76,11 +76,11 @@ class ExperienceItem extends Component {
             <React.Fragment>
                 {renderTitle(item.title)}
                 <div className="experience-item__content__description">
-                    {(item.list.text !== '' || item.list.text !== undefined) && (
+                    {item.list.text !== undefined && (
                         <p>{item.text}</p>
                     )}
                     {item.list.length >= 1 && (
-                        <ul>
+                        <ul style={{paddingLeft: '27px', marginBottom: '5px'}}>
                             {item.list.map(item => {
                                 return <li>{item}</li>
                             })}
@@ -102,7 +102,7 @@ class ExperienceItem extends Component {
                 <div className="experience-item__description-block">
                     <div className="experience-item__description-header">
                         <div className="child-container">
-                            <div className="experience-item__description-header__company-name">{item.companyName} <br /> <span>Role: {item.role}</span></div>
+                            <div className="experience-item__description-header__company-name">{item.companyName} <br /> <span>Role: {item.role} <span className="mobile-view date">({item.dates}</span>}</span></div>
                         </div>
                     </div>
                     <div className="experience-item__toggler">
@@ -111,6 +111,7 @@ class ExperienceItem extends Component {
                     </div>
                     <Collapse isOpen={isOpen.some(item => item === index)}>
                         <div className="experience-item__content">
+                            {/* <div className="mobile-view date">Nov 2019 - Nowadays</div> */}
                             {item.descriptionItems.map(item => {
                                 return this.renderDescriptionItem(item)
                             })}

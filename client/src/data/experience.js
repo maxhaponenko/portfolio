@@ -11,7 +11,7 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -20,7 +20,7 @@ export const experience = [
             },
             {
                 title: 'Workflow / dev tools',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -29,7 +29,7 @@ export const experience = [
             },
             {
                 title: 'Team-building',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -46,7 +46,7 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -55,7 +55,7 @@ export const experience = [
             },
             {
                 title: 'Workflow / dev tools',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -72,7 +72,7 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -81,7 +81,7 @@ export const experience = [
             },
             {
                 title: 'Workflow / dev tools',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -98,7 +98,7 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -107,7 +107,7 @@ export const experience = [
             },
             {
                 title: 'Workflow / dev tools',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -124,7 +124,7 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -133,7 +133,7 @@ export const experience = [
             },
             {
                 title: 'Workflow / dev tools',
-                text: '',
+                text: undefined,
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
