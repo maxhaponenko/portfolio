@@ -54,6 +54,7 @@ export default class Skills extends Component {
                                     items={librariesObjects} 
                                     maxColumns={3} 
                                     breakpoints={[900, 650]}/>
+                        </div>
                     </div>
                     <div className="main__container">
                         <div className="main__container-heading main__container-heading--blue-highlighted">
@@ -85,8 +86,8 @@ export default class Skills extends Component {
                     </div>
                     <FastLinksCompact />
                 </div>
-                </div>
             </div>
+            // </div>
         )
     }
 }
