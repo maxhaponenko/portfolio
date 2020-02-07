@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router';
 import profileImage from '../../media/images/profile-image.jpg';
 import Navigation from './navigation';
+import ContactsModal from '../modals/contacts.modal';
 import './pages-wrapper.scss';
 
 class PagesWrapper extends Component {
@@ -9,7 +10,8 @@ class PagesWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstSurnameLetter: 'H'
+            firstSurnameLetter: 'H',
+            isModalOpen: false,
         }
     }
 
@@ -19,6 +21,12 @@ class PagesWrapper extends Component {
         } else {
             this.setState({firstSurnameLetter: 'H'})
         }
+    }
+
+    toggleContactsModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        })
     }
 
     render() {
@@ -72,9 +80,12 @@ class PagesWrapper extends Component {
                             <div>gaponenko.mm@gmail.com</div>
                             <div>+380676758482</div>
                         </div>
-                        <div className="designed" onClick={() => this.switchFirstLetter()}>designed by Max <span>{this.state.firstSurnameLetter}</span>aponenko</div>
+                        <div className="designed" onClick={() => {
+                            this.switchFirstLetter();
+                            this.toggleContactsModal()
+                            }}>designed by Max <span>{this.state.firstSurnameLetter}</span>aponenko</div>
                 </footer>
-                
+                <ContactsModal isOpen={this.state.isModalOpen} toggle={() => this.toggleContactsModal()}/>
             </Fragment>
         )
     } 
