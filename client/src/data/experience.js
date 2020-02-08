@@ -11,7 +11,7 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: undefined,
+                text: 'Working in this company was great opportunity to gain new experience on data bases',
                 list: [
                     'Wireframes prototyping and writing of the technical requirements for website',
                     'Negotiated as client with developers and QA testing',
@@ -39,10 +39,10 @@ export const experience = [
         ]
     },
     {
-        imgSrc: gLogo,
+        imgSrc: require('../media/images/logo_ghostel.png'),
         companyName: 'Ixioo',
         role: 'Marketing Manager & HTML/CSS coder',
-        dates: 'Nov 2019 - Nowadays',
+        dates: 'Jul 2019 - Oct 2019',
         descriptionItems: [
             {
                 title: 'Responsibilities',
@@ -65,10 +65,10 @@ export const experience = [
         ]
     },
     {
-        imgSrc: gLogo,
+        imgSrc: require('../media/images/logo_transferroom.png'),
         companyName: 'Quest Ground Ent.',
         role: 'Co-Founder & UI/UX designer & Frontend Developer',
-        dates: 'Nov 2019 - Nowadays',
+        dates: 'Nov 2016 - Oct 2018',
         descriptionItems: [
             {
                 title: 'Responsibilities',
@@ -91,10 +91,36 @@ export const experience = [
         ]
     },
     {
-        imgSrc: gLogo,
+        imgSrc: require('../media/images/logo_transferroom.png'),
+        companyName: 'Escape Quest',
+        role: 'Franchisee Director',
+        dates: 'Dec 2015 - Nov 2016',
+        descriptionItems: [
+            {
+                title: 'Responsibilities',
+                text: undefined,
+                list: [
+                    'Wireframes prototyping and writing of the technical requirements for website',
+                    'Negotiated as client with developers and QA testing',
+                    'Lorem ipsum something shpould be here as text to show'
+                ]
+            },
+            {
+                title: 'Workflow / dev tools',
+                text: undefined,
+                list: [
+                    'Wireframes prototyping and writing of the technical requirements for website',
+                    'Negotiated as client with developers and QA testing',
+                    'Lorem ipsum something shpould be here as text to show'
+                ]
+            }
+        ]
+    },
+    {
+        imgSrc: require('../media/images/logo_transferroom.png'),
         companyName: 'ForPay',
         role: 'Co-Founder & Fronend Developer',
-        dates: 'Nov 2019 - Nowadays',
+        dates: 'Aug 2013 - May 2014',
         descriptionItems: [
             {
                 title: 'Responsibilities',
@@ -120,7 +146,7 @@ export const experience = [
         imgSrc: require('../media/images/logo_ghostel.png'),
         companyName: 'GHOSTeL',
         role: 'Co-Founder',
-        dates: 'Nov 2019 - Nowadays',
+        dates: 'Sep 2011 - Jun 2019',
         descriptionItems: [
             {
                 title: 'Responsibilities',

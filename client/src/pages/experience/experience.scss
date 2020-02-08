@@ -38,7 +38,7 @@
         &.blue-line::before {
             content: '';
             width: 13px;
-            height: 0.5px;
+            height: 1px;
             position: absolute;
             
             right: -17px;
@@ -71,8 +71,9 @@
         position: relative;
         grid-area: description;
         &__company-name {
-            top: 4px;
             position: relative;
+            top: 50%;
+            transform: translate(0, -50%);
             font-size: 26px;
             color: $color-blue;
             line-height: 1.5rem;
@@ -155,13 +156,14 @@
                 background: linear-gradient(to right, rgba(79, 155, 255, 0.5) 0%, rgba(79, 155, 255, 0.5) 50%, rgba(79, 155, 255, 0.1) 100%);
             }
         }
-        .mobile-view.date {
-            // display: block;
-            // font-size: 13px;
-            color: $color-blue;
-            // position: relative;
-            // left: -10px;
-            // margin-bottom: 5px;
+        &__description {
+            p {
+                margin-bottom: 0;
+            }
+            ul {
+                padding-left: 27px;
+                margin-bottom: 5px;
+            }
         }
     }
     &:before {
@@ -189,9 +191,13 @@
     }
 }
 
+.experience-item__description-header__company-name  {
+    .mobile-view.date {
+        display: none;
+    }   
+}
+
 @media (max-width: 830px) {
-    
-    
     .experience .main__container:first-child {
         padding: 20px 10px;
     }
@@ -199,15 +205,11 @@
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
-
     .experience-item {
         grid-template-columns: 70px 1fr;
     }
     .experience-item:before {
-        width: 100vw;
-        position: absolute;
-        right: 50%;
-        transform: translate(50%, 0);
+        background-image: radial-gradient(circle, rgba(99, 149, 255, 0.075), transparent);
     }
     .experience-item__logo.blue-line:before {
         display: none;
@@ -248,13 +250,38 @@
 }
 
 @media (max-width: 499px) {
+    
+    
     .experience-item {
         grid-template-columns: 50px 1fr;
         margin-bottom: 10px;
+        // height: 70px;
+    }
+    .experience-item:before {
+        width: 100vw;
+        position: absolute;
+        right: 50%;
+        transform: translate(50%, 0);
+    }
+    .experience-item__description-block {
+        grid-template-rows: 75px auto;
     }
     .experience-item__logo {
+        top: 18px;
+        transform: none;
         width: 40px;
         height: 40px;
+        left: 2px;
+    }
+    .experience-item__description-header__company-name  {
+        span {
+            color: $color-font-light-grey;
+        }
+        .mobile-view.date {
+            display: block;
+            color: #AEAEAE;
+        }   
+        
     }
     .experience-item__toggler {
         display: none;
