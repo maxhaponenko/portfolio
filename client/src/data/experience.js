@@ -1,10 +1,7 @@
-import trLogo from '../media/images/logo_transferroom.png';
-import gLogo from '../media/images/logo_ghostel.png';
-
 
 export const experience = [
     {
-        imgSrc: require('../media/images/logo_transferroom.png'),
+        imgSrc: require('../media/images/companiesLogos/logo_transferroom.png'),
         companyName: 'TransferRoom',
         role: 'Frontend Developer',
         dates: 'Nov 2019 - Nowadays',
@@ -39,7 +36,7 @@ export const experience = [
         ]
     },
     {
-        imgSrc: require('../media/images/logo_ghostel.png'),
+        imgSrc: require('../media/images/companiesLogos/logo_ixioo.png'),
         companyName: 'Ixioo',
         role: 'Marketing Manager & HTML/CSS coder',
         dates: 'Jul 2019 - Oct 2019',
@@ -65,7 +62,7 @@ export const experience = [
         ]
     },
     {
-        imgSrc: require('../media/images/logo_transferroom.png'),
+        imgSrc: require('../media/images/companiesLogos/logo_qg.png'),
         companyName: 'Quest Ground Ent.',
         role: 'Co-Founder & UI/UX designer & Frontend Developer',
         dates: 'Nov 2016 - Oct 2018',
@@ -91,7 +88,7 @@ export const experience = [
         ]
     },
     {
-        imgSrc: require('../media/images/logo_transferroom.png'),
+        imgSrc: require('../media/images/companiesLogos/logo_escapequest.png'),
         companyName: 'Escape Quest',
         role: 'Franchisee Director',
         dates: 'Dec 2015 - Nov 2016',
@@ -117,7 +114,7 @@ export const experience = [
         ]
     },
     {
-        imgSrc: require('../media/images/logo_transferroom.png'),
+        imgSrc: require('../media/images/companiesLogos/logo_forpay.png'),
         companyName: 'ForPay',
         role: 'Co-Founder & Fronend Developer',
         dates: 'Aug 2013 - May 2014',
@@ -143,7 +140,7 @@ export const experience = [
         ]
     },
     {
-        imgSrc: require('../media/images/logo_ghostel.png'),
+        imgSrc: require('../media/images/companiesLogos/logo_ghostel.png'),
         companyName: 'GHOSTeL',
         role: 'Co-Founder',
         dates: 'Sep 2011 - Jun 2019',
