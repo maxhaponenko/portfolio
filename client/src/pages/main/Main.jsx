@@ -18,13 +18,11 @@ export default class Main extends Component {
                                     <p><span>Job:</span> working in TransferRoom Ltd (frontend developer)</p>
                                     <p><span>Using now:</span> JS ES6+, Typescript, React & Redux, Scss, BEM, Azure DevOps, Invision, SCRUM</p>
                                     <p><span>Languages:</span></p>
-                                    <p>
-                                        <ul>
-                                            <li>English - Intermediate / Upper-intermediate</li>
-                                            <li>Ukrainian - Native</li>
-                                            <li>Russian - Fluent</li>
-                                        </ul>
-                                    </p>
+                                    <ul>
+                                        <li>English - Intermediate / Upper-intermediate</li>
+                                        <li>Ukrainian - Native</li>
+                                        <li>Russian - Fluent</li>
+                                    </ul>
                                 </div>
                             </div>
                             <div className="col-xl-6 col-md-5 col-sm-12 col-12 main__container">
