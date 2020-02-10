@@ -6,6 +6,9 @@ import ColumnListResponsive from '../../components/column-list-responsive/column
 
 export default class Skills extends Component {
     
+    componentDidMount() {
+        window.scroll(0, 0)
+    }
 
     render() {
         

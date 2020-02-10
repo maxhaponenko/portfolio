@@ -13,6 +13,10 @@ export default class Experience extends Component {
         }
     }
 
+    componentDidMount() {
+        window.scroll(0, 0)
+    }
+
     collapse(id) {
         console.log('hohoho: ' + id)
         if (this.state.isOpen.some(i => i === id)) {

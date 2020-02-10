@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Modal, ModalBody, ModalFooter, Label, Input, FormGroup, Form } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalFooter, Label, Input, FormGroup, Form, ModalHeader } from 'reactstrap';
+import './contacts.modal.scss';
 
 export default class ContactsModal extends React.Component {
 
@@ -13,13 +14,16 @@ export default class ContactsModal extends React.Component {
 
         return (
             <div>
-                <Modal toggle={this.toggle} isOpen={isOpen}>
-                    <ModalBody>
-                        Observe the "Open" button. It will be focused after close when "returnFocusAfterClose" is true and will not be focused if "returnFocusAfterClose" is false.
+                <Modal toggle={this.toggle} isOpen={isOpen} className="center modal--default">
+                    <ModalBody style={{minHeight: '400px'}}>
+                        <div className="contacts-block">
+                            <div className="email">gaponenko.mm@gmail.com</div>
+                            <div className="phone">+380676758482</div>
+                        </div>
                     </ModalBody>
-                    <ModalFooter>
+                    {/* <ModalFooter>
                         <Button color="primary" onClick={this.toggle}>Close</Button>
-                    </ModalFooter>
+                    </ModalFooter> */}
                 </Modal>
             </div>
         )

@@ -77,12 +77,12 @@ class PagesWrapper extends Component {
                 <footer>
                         <div className="copyright">Copyright 2020</div>
                         <div className="contacts">
-                            <div>gaponenko.mm@gmail.com</div>
-                            <div>+380676758482</div>
+                            <div onClick={() => {
+                                this.toggleContactsModal()
+                            }}>contacts</div>
                         </div>
                         <div className="designed" onClick={() => {
                             this.switchFirstLetter();
-                            this.toggleContactsModal()
                             }}>designed by Max <span>{this.state.firstSurnameLetter}</span>aponenko</div>
                 </footer>
                 <ContactsModal isOpen={this.state.isModalOpen} toggle={() => this.toggleContactsModal()}/>

@@ -5,10 +5,14 @@ import press_desktop from '../../media/images/projectsImages/press_desktop.png';
 import press_mobile from '../../media/images/projectsImages/press_mobile.png';
 import { projects } from '../../data/projects';
 import Image from '../../components/other/image-component/image';
+import FastLinksCompact from '../../components/other/fast-links.component';
 import './projects.scss'
 
 export default class Projects extends Component {
     
+    componentDidMount() {
+        window.scroll(0, 0)
+    }
 
     render() {
         return (
@@ -23,6 +27,10 @@ export default class Projects extends Component {
                         />
                     )
                 })}
+                <div className="wrapper pt-3">
+                    <FastLinksCompact/>
+                </div>
+                
             </React.Fragment>
             
         ) 

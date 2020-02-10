@@ -5,6 +5,7 @@
 @import "~@fortawesome/fontawesome-free/scss/regular.scss";
 @import './_variables';
 @import './_common';
+@import './_modals';
 
 body {
     background-image: url('../images/bg.png');
@@ -13,6 +14,3 @@ body {
     font-weight: 300;
     color: $color-white;
 }
-
-// @import '../../components/pages-wrapper.scss';
-// @import '../../pages/main/main.scss';
