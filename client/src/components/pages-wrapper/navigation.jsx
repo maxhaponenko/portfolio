@@ -156,6 +156,7 @@ class Navigation extends React.Component {
                 <NavItems
                     openMenu={this.state.navigationOpen}
                     closeMenuCallback={() => this.closeNavigationMenu()}
+                    toggleContacts={() => this.props.toggleContacts()}
                 />
             </nav>
         )

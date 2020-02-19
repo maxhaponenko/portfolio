@@ -13,11 +13,12 @@ class NavItems extends Component {
                 item2: false,
                 item3: false,
                 item4: false,
-                item5: false
+                item5: false,
+                item6: false
             }
         };
-        this.openSpeedSettings = [ 50, 100, 150, 250, 300 ];
-        this.closeSpeedSettings = [ 200, 150, 100, 50, 25 ]
+        this.openSpeedSettings = [ 50, 100, 150, 250, 300, 320 ];
+        this.closeSpeedSettings = [ 200, 150, 100, 50, 25, 10 ]
     }
 
     menuAction(action) {
@@ -42,6 +43,8 @@ class NavItems extends Component {
                         animatePosition(this.item4, 'right', moveItemSize)
                     } else if (i+1 === 5) {
                         animatePosition(this.item5, 'right', moveItemSize)
+                    } else if (i+1 === 6) {
+                        animatePosition(this.item6, 'right', moveItemSize)
                     }
                 }) 
             }, action === 'open' ? this.openSpeedSettings[i] : this.closeSpeedSettings[i])
@@ -96,6 +99,10 @@ class NavItems extends Component {
                 <NavLink to="/education" ref={ref => this.item5 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.education)}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Education</div>
+                </NavLink>
+                <NavLink to={this.props.history.location.pathname} ref={ref => this.item6 = ref} className={`nav-menu__item`} onClick={() => this.props.toggleContacts()}>
+                    <span className="pointer"></span>
+                    <div className="nav-menu__item--text">Contacts</div>
                 </NavLink>
                 
             </div>

@@ -1,11 +1,13 @@
 @import '~bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+@import '../icons/flaticon.css';
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/regular.scss";
 @import './_variables';
 @import './_common';
 @import './_modals';
+
 
 body {
     background-image: url('../images/bg.png');

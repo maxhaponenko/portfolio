@@ -21,6 +21,7 @@
     "redux": "^4.0.5"
   },
   "scripts": {
+    "svgr": "svgr -d src/media/icons/ assets/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -11,7 +11,7 @@ class PagesWrapper extends Component {
         super(props);
         this.state = {
             firstSurnameLetter: 'H',
-            isModalOpen: false,
+            isModalOpen: true,
         }
     }
 
@@ -33,7 +33,7 @@ class PagesWrapper extends Component {
 
         return (
             <Fragment>
-                <Navigation />
+                <Navigation toggleContacts={() => this.toggleContactsModal()} />
                 <header>
                     <div className="profile-container">
                         <div className="profile">
