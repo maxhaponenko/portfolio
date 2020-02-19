@@ -5,11 +5,11 @@ export default class ColumnListResponsive extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: this.props.items,
+            items: props.items,
             oneItemHeight: undefined,
-            maxColumns: this.props.maxColumns,
-            displayColumns: this.props.maxColumns,
-            breakpoints: this._sortBreakpoints(this.props.breakpoints),
+            maxColumns: props.maxColumns,
+            displayColumns: props.maxColumns,
+            breakpoints: this._sortBreakpoints(props.breakpoints),
             columnMatrix: undefined,
             calculatingDimensions: false, 
             itemsVisibility: false

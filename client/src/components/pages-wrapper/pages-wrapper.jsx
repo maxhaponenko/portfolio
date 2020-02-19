@@ -11,7 +11,7 @@ class PagesWrapper extends Component {
         super(props);
         this.state = {
             firstSurnameLetter: 'H',
-            isModalOpen: true,
+            isModalOpen: false,
         }
     }
 
