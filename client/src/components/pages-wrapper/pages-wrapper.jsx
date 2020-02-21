@@ -34,7 +34,7 @@ class PagesWrapper extends Component {
         return (
             <Fragment>
                 <Navigation toggleContacts={() => this.toggleContactsModal()} />
-                <header>
+                {/* <header>
                     <div className="profile-container">
                         <div className="profile">
                             <div className="profile__photo">
@@ -70,7 +70,7 @@ class PagesWrapper extends Component {
                             </div>
                         </div>
                     </div>
-                </header>
+                </header> */}
                 <div className="page-frame">
                     {this.props.children}
                 </div>
