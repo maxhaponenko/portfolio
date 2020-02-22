@@ -226,7 +226,7 @@ nav {
         // Border styles
         border-bottom-left-radius: 10px 30%;
         border-top-left-radius: 25px 70%;
-        $border: 1px;
+        $border: 0px;
         background-clip: padding-box; /* !important */
         border: $border solid transparent;  /* !important */
 
@@ -316,7 +316,9 @@ nav {
            
             &::before {
                 content: '';
-                border-radius: 10px;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                // border-radius: 10px;
                 position: absolute;
                 top: 0; right: 0; bottom: 0; left: 0;
                 z-index: -1;
@@ -432,7 +434,7 @@ nav {
         //     transition: 0.5s ease-in-out;
         // }
         .nav-menu {
-            top: -271px;
+            top: -310px;
         }
     }
 }
