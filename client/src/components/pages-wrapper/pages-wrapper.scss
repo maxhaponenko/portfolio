@@ -287,11 +287,11 @@ nav {
         right: -300px;
         width: 310px;
         z-index: 100;
-        -webkit-transition: 0.5s ease-in-out;
-        -moz-transition: 0.5s ease-in-out;
-        -o-transition: 0.5s ease-in-out;
-        transition: 0.5s ease-in-out;
-        
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+        will-change: transform, right;
         
         &__item {
             position: relative;
@@ -312,6 +312,7 @@ nav {
             -moz-transition: 0.3s ease-in-out;
             -o-transition: 0.3s ease-in-out;
             transition: 0.3s ease-in-out;
+            will-change: transform, right;
            
             &::before {
                 content: '';

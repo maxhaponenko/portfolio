@@ -17,8 +17,8 @@ class NavItems extends Component {
                 item6: false
             }
         };
-        this.openSpeedSettings = [ 50, 100, 150, 250, 300, 320 ];
-        this.closeSpeedSettings = [ 200, 150, 100, 50, 25, 10 ]
+        this.openSpeedSettings = [ 75, 100, 150, 250, 300, 320 ];
+        this.closeSpeedSettings = [ 200, 150, 100, 75, 50, 40 ]
     }
 
     menuAction(action) {
@@ -48,10 +48,8 @@ class NavItems extends Component {
                     }
                 }) 
             }, action === 'open' ? this.openSpeedSettings[i] : this.closeSpeedSettings[i])
-            
         }
     };
-    
 
     componentDidUpdate(prevProps) {
         if ((this.props.openMenu !== prevProps.openMenu) && this.props.openMenu === true) {
@@ -64,15 +62,11 @@ class NavItems extends Component {
     handleNavigationAction(pageName) {
         let path = this.props.history.location.pathname;
         if (!path.includes(pageName)){
-            setTimeout(() => {
-                this.props.closeMenuCallback()
-            }, 250)
+            this.props.closeMenuCallback()
         } else if (path === pageName) {
             return false 
         } else {
-            setTimeout(() => {
-                this.props.closeMenuCallback()
-            }, 250)
+            this.props.closeMenuCallback()
         }
     }
 
@@ -90,7 +84,6 @@ class NavItems extends Component {
                 <NavLink to="/skills" ref={ref => this.item3 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.skills)}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Skills<span>Technologies, Frameworks, Libs, Tools</span></div>
-                    
                 </NavLink>
                 <NavLink to="/experience" ref={ref => this.item4 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.experience)}>
                     <span className="pointer"></span>
@@ -104,9 +97,7 @@ class NavItems extends Component {
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Contacts</div>
                 </NavLink>
-                
             </div>
-            
         )
     }
 }
