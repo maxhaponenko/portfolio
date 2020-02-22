@@ -313,6 +313,7 @@ nav {
             -o-transition: 0.3s ease-in-out;
             transition: 0.3s ease-in-out;
             will-change: transform, right;
+            cursor: pointer;
            
             &::before {
                 content: '';

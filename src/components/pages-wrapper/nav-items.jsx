@@ -93,10 +93,10 @@ class NavItems extends Component {
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Education</div>
                 </NavLink>
-                <NavLink to={this.props.history.location.pathname} ref={ref => this.item6 = ref} className={`nav-menu__item`} onClick={() => this.props.toggleContacts()}>
+                <div ref={ref => this.item6 = ref} className={`nav-menu__item`} onClick={() => this.props.toggleContacts()}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Contacts</div>
-                </NavLink>
+                </div>
             </div>
         )
     }
