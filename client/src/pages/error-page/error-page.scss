@@ -1,0 +1,41 @@
+@import '~media/styles/_variables.scss';
+
+.error-page {
+    .text-block {
+        width: 100%;
+        height: 60vh;
+        text-align: center;
+        position: relative;
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            > div:first-child {
+                font-size: 5vw;
+                color: $color-blue;
+            }
+            > div:last-child {
+                font-size: 2vw;
+                color: $color-font-dark-grey;
+            }
+            @media (max-width: 1000px) {
+                > div:first-child {
+                    font-size: 8vw;
+                }
+                > div:last-child {
+                    font-size: 4vw;
+                }
+            }
+            @media (max-width: 501px) {
+                > div:first-child {
+                    font-size: 10vw;
+                }
+                > div:last-child {
+                    font-size: 6vw;
+                }
+            }
+        }
+        
+    }
+}
