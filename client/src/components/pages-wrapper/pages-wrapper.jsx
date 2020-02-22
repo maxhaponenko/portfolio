@@ -38,7 +38,7 @@ class PagesWrapper extends Component {
                     <div className="profile-container">
                         <div className="profile">
                             <div className="profile__photo">
-                                <img src={profileImage}></img>
+                                <img src={profileImage} alt="profile"/>
                             </div>
                             <div className="profile__text">
                                 <div className="profile__text--name">

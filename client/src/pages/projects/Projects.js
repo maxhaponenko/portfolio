@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import qg_desktop from '../../media/images/projectsImages/qg_desktop.png';
-import qg_mobile from '../../media/images/projectsImages/qg_mobile.png';
-import press_desktop from '../../media/images/projectsImages/press_desktop.png';
-import press_mobile from '../../media/images/projectsImages/press_mobile.png';
 import { projects } from '../../data/projects';
 import Image from '../../components/other/image-component/image';
 import FastLinksCompact from '../../components/other/fast-links.component';
@@ -112,7 +108,7 @@ class ProjectTemplate extends Component {
                                     <div className="description">
                                         <div className="text">{project.description}</div>
                                         {project.link !== null && (
-                                            <div className="link"><a href={project.link.href} target="_blank">{project.link.text}</a></div>
+                                            <div className="link"><a href={project.link.href} target="_blank" rel="noopener noreferrer">{project.link.text}</a></div>
                                         )}
                                     </div>
                                 </div>
@@ -162,7 +158,7 @@ class ProjectTemplate extends Component {
                                     <div className="description">
                                         <div className="text">{project.description}</div>
                                         {project.link !== null && (
-                                            <div className="link"><a href={project.link.href} target="_blank">{project.link.text}</a></div>
+                                            <div className="link"><a href={project.link.href} target="_blank" rel="noopener noreferrer">{project.link.text}</a></div>
                                         )}
                                     </div>
                                 </div>

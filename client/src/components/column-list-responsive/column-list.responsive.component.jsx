@@ -173,7 +173,7 @@ export default class ColumnListResponsive extends React.Component {
         let sortedBreakpoints = array.sort((a,b) => {
             if (b < a) return 1;
             if (b > a) return -1;
-            if (a === b) return 0;
+            return 0;
         });
         return sortedBreakpoints[0]
     }

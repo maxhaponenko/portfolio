@@ -101,7 +101,7 @@ class ExperienceItem extends Component {
         return (
             <div className="experience-item" onClick={() => collapse(index)}>
                 <div className={`experience-item__logo ${isOpen.some(item => item === index) ? 'blue-line' : ''}`}>
-                    <img src={item.imgSrc}/>
+                    <img src={item.imgSrc} alt="company logo"/>
                 </div>
                 <div className="experience-item__description-block">
                     <div className="experience-item__description-header">
@@ -111,7 +111,7 @@ class ExperienceItem extends Component {
                     </div>
                     <div className="experience-item__toggler">
                         <div className="date">{item.dates}</div>
-                        <div className="btn-dropdown"><i className={isOpen.some(i => i == index) ? 'open' : 'closed'}></i></div>
+                        <div className="btn-dropdown"><i className={isOpen.some(i => i === index) ? 'open' : 'closed'}></i></div>
                     </div>
                     <Collapse isOpen={isOpen.some(item => item === index)}>
                         <div className="experience-item__content">

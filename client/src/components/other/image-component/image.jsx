@@ -32,7 +32,8 @@ export default class Image extends React.Component {
                         style={style ? style : null} 
                         className={className ? `${className}` : ''} 
                         src={src} 
-                        onLoad={this.handleImageLoaded}>
+                        onLoad={this.handleImageLoaded}
+                        alt={src.toString()}>
                     </img>
                 )}
 
