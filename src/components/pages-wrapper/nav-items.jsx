@@ -62,11 +62,11 @@ class NavItems extends Component {
     handleNavigationAction(pageName) {
         let path = this.props.history.location.pathname;
         if (!path.includes(pageName)){
-            this.props.closeMenuCallback()
+            setTimeout(() => this.props.closeMenuCallback(), 30)
         } else if (path === pageName) {
             return false 
         } else {
-            this.props.closeMenuCallback()
+            setTimeout(() => this.props.closeMenuCallback(), 30)
         }
     }
 
