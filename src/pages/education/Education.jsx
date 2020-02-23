@@ -6,6 +6,10 @@ import { education } from '../../data/education'
 
 export default class Education extends Component {
     
+    componentDidMount() {
+        window.scroll(0, 0)
+    }
+
     render() {
         const renderFrontendEducation = () => {
             let frontendExp = education.filter(item => item.group === 'frontend')

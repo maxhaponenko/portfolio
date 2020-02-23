@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { publicPaths } from '../../routes/paths';
 import './main.scss'
 
@@ -60,9 +61,10 @@ export default class Main extends Component {
                                         <div className="cv-square__doc">CV.pdf</div>
                                         <div className="cv-square__description">on the position of Frontend Developer</div>
                                     </div>
-                                    <button className="btn btn-download btn-download--aqua">
+                                    {/* <button className="btn btn-download btn-download--aqua">
                                         Download
-                                    </button>
+                                    </button> */}
+                                    <Link className="btn btn-download btn-download--aqua" to="/files/CV_Max_Haponenko_Front_End.pdf" target="_blank" download>Download</Link>
                                 </div>
                             </div>
                         </div>

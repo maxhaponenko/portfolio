@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import profileImage from '../../media/images/profile-image.jpg';
 import Navigation from './navigation';
 import ContactsModal from '../modals/contacts.modal';
+import { mainSettings } from 'settings/main-settings'
 import './pages-wrapper.scss';
 
 class PagesWrapper extends Component {
@@ -51,25 +52,35 @@ class PagesWrapper extends Component {
                         </div>
                     </div>
                     
-                    <div className="rates-container">
-                        <div className="rates__hourly">
-                            <div className="rates__hourly--icon"> 
-                                <i className="far fa-clock"></i>
-                            </div>
-                            <div className="rates__hourly--text">
-                                <span>from</span> $12 / <span>hour</span>
-                            </div>
+                    {mainSettings.rate.show && (
+                        <div className="rates-container">
+                            {mainSettings.rate.hourlyRate && (
+                                <div className="rates__hourly">
+                                    <div className="rates__hourly--icon">
+                                        <i className="far fa-clock"></i>
+                                    </div>
+                                    <div className="rates__hourly--text">
+                                        <span>from</span> $12 / <span>hour</span>
+                                    </div>
+                                </div>
+                            )}
+                            {(mainSettings.rate.hourlyRate && mainSettings.rate.monthlyRate) && (
+                                <div className="rates__divider">or</div>
+                            )}
+                            {mainSettings.rate.monthlyRate && (
+                                <div className="rates__monthly">
+                                    <div className="rates__monthly--icon">
+                                        <i className="far fa-calendar-alt"></i>
+                                    </div>
+                                    <div className="rates__monthly--text">
+                                        <span>from</span> $1500 <span>monthly</span>
+                                    </div>
+                                </div>
+                            )}
+                            
                         </div>
-                        <div className="rates__divider">or</div>
-                        <div className="rates__monthly">
-                            <div className="rates__monthly--icon">
-                                <i className="far fa-calendar-alt"></i>
-                            </div>
-                            <div className="rates__monthly--text">
-                                <span>from</span> $1500 <span>monthly</span>
-                            </div>
-                        </div>
-                    </div>
+                    )}
+                    
                 </header>
                 <div className="page-frame">
                     {this.props.children}
