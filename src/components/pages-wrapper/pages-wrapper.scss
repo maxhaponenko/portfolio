@@ -406,39 +406,6 @@ nav {
         }
     }
 }
-@media (max-width: 499px) {
-    nav {
-        top: unset;
-        bottom: 0;
-        // .nav-page-name {
-        //     display: block;
-        //     width: 180px;
-        //     right: 0;
-        //     margin: 2px 0 2px auto;
-        // }
-        .nav-button {
-            border-bottom-left-radius: 25px 70%;
-            border-top-left-radius: 10px 30%;
-            // Other elements of the block
-            &__icon {
-                transform: scaleY(-1) scaleX(-1.2);
-            }
-            // &__text {
-            //     font-size: 18px;
-            // }
-        }
-        // .toggler {
-        //     background-color: rgba(0,0,0,0.1);
-        //     -webkit-transition: 0.5s ease-in-out;
-        //     -moz-transition: 0.5s ease-in-out;
-        //     -o-transition: 0.5s ease-in-out;
-        //     transition: 0.5s ease-in-out;
-        // }
-        .nav-menu {
-            top: -310px;
-        }
-    }
-}
 
 body {
     height: auto;

@@ -14,11 +14,11 @@ class Navigation extends React.Component {
                 main: 'main',
                 skills: 'skills',
                 experience: 'experience',
-                projects: 'projects'
+                projects: 'projects',
+                education: 'education'
             },
             activePage: 'main',
-            firstSurnameLetter: 'H',
-            
+            firstSurnameLetter: 'H'
         }
     }
 
@@ -54,6 +54,7 @@ class Navigation extends React.Component {
     componentDidMount() {
         this.checkPageName(window.location.pathname);
         document.addEventListener('scroll', this.calculateNavigationMode.bind(this))
+        window.addEventListener('resize', this.calculateNavigationMode.bind(this))
         this.calculateNavigationMode()
     }
 
@@ -66,27 +67,34 @@ class Navigation extends React.Component {
 
     componentWillUnmount() {
         document.removeEventListener('scroll', this.calculateNavigationMode)
+        window.removeEventListener('resize', this.calculateNavigationMode)
     }
 
     calculateNavigationMode() {
-        const pageHeight = document.body.clientHeight;
-        const windowHeight = window.innerHeight;
-        const scrollTop = window.scrollY;
-        const leftToScrollToGetBottom = pageHeight - windowHeight - scrollTop;
-        const shouldChangePosition = window.innerWidth < 500;
-
-        if (shouldChangePosition) {
-            if (leftToScrollToGetBottom < 30 && this.state.navigationIsHidden === false) {
-                this.setState({
-                    navigationIsHidden: true
-                }, this.closeNavigationMenu())
-            } else if (leftToScrollToGetBottom >= 30 && this.state.navigationIsHidden === true) {
-                this.setState({
-                    navigationIsHidden: false
-                })
-            }
+        if (window.innerWidth < 500 || (window.scrollY > 50 && window.innerWidth < 500 && !this.state.navigationIsHidden)) {
+            this.setState({
+                navigationIsHidden: true
+            }, this.closeNavigationMenu())
+        } else if (window.scrollY <= 50 && window.innerWidth >= 500 && this.state.navigationIsHidden) {
+            this.setState({
+                navigationIsHidden: false
+            })
         }
-        
+    }
+
+    handleNavButtonClick() {
+        if (!this.state.navButtonDisabled && !this.state.navigationIsHidden) {
+            this.setState({
+                navigationOpen: !this.state.navigationOpen,
+                navButtonDisabled: true
+            }, this.enableNavButton(200))
+        } else if (!this.state.navButtonDisabled && this.state.navigationIsHidden) {
+            this.setState({
+                navigationOpen: !this.state.navigationOpen,
+                navButtonDisabled: true,
+                hiddenNavigationIsOpened: !this.state.hiddenNavigationIsOpened
+            }, this.enableNavButton(200))
+        }
     }
 
     closeNavigationMenu = () => {
@@ -107,14 +115,12 @@ class Navigation extends React.Component {
 
     render() {
         
-        const getHiddenNavigationStyles = () => {
+        const getNavigationStyles = () => {
             const hiddenNavStyles = {
-                right: '-133px',
-                bottom: '35px'
+                right: '-133px'
             }
             const notHiddenNavStyles = {
-                right: '0px',
-                bottom: '0px'
+                right: '0px'
             }
             if (this.state.navigationIsHidden && !this.state.hiddenNavigationIsOpened) {
                 return hiddenNavStyles
@@ -124,30 +130,14 @@ class Navigation extends React.Component {
         }
 
         return (
-            <nav style={getHiddenNavigationStyles()}>
-                
+            <nav style={getNavigationStyles()}>
                 <div className="toggler" style={this.state.navigationOpen ? { display: 'block' } : { display: 'none' }} onClick={() => {this.closeNavigationMenu()}}></div>
-                
-                <div style={this.state.navigationIsHidden && !this.state.hiddenNavigationIsOpened ? { display: 'none'} : { display: 'block' }} className="nav-page-name" ref={ref => this.pageName = ref}>
+                <div className="nav-page-name" style={this.state.navigationIsHidden ? { opacity: 0 } : { opacity: 1 }} ref={ref => this.pageName = ref}>
                     <span>{this.state.activePage}</span> page
                 </div>
-                
                 <button
                     className={`nav-button ${this.state.navigationOpen ? 'active' : ''}`}
-                    onClick={() => {
-                        if (!this.state.navButtonDisabled && !this.state.navigationIsHidden) {
-                            this.setState({
-                                navigationOpen: !this.state.navigationOpen,
-                                navButtonDisabled: true
-                            }, this.enableNavButton(200))
-                        } else if (!this.state.navButtonDisabled && this.state.navigationIsHidden) {
-                            this.setState({
-                                navigationOpen: !this.state.navigationOpen,
-                                navButtonDisabled: true,
-                                hiddenNavigationIsOpened: !this.state.hiddenNavigationIsOpened
-                            }, this.enableNavButton(200))
-                        }
-                    }}
+                    onClick={() => this.handleNavButtonClick()}
                 >
                     <i className="fas fa-sort-amount-down-alt nav-button__icon"></i>
                     <div className="nav-button__text">Navigate</div>
