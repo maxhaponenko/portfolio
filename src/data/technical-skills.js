@@ -11,12 +11,12 @@ export const technicalSkills = [
     },
     {
         name: 'Bootstrap',
-        experience: 6,
+        experience: 7,
         expType: 'Months'
     },
     {
         name: 'Pug / Jade',
-        experience: 1,
+        experience: 0.5,
         expType: 'Months'
     },
     {
@@ -26,16 +26,16 @@ export const technicalSkills = [
     },
     {
         name: 'React & Redux',
-        experience: 6,
+        experience: 8,
         expType: 'Months'
     },
     {
-        name: 'Node.js',
+        name: 'Express.js',
         experience: 'familiar with',
         expType: ''
     },
     {
-        name: 'jQuery ',
+        name: 'Electron.js',
         experience: 'familiar with',
         expType: ''
     },
@@ -56,7 +56,7 @@ export const technicalSkills = [
     },
     {
         name: 'InVision Studio',
-        experience: 1,
+        experience: 2,
         expType: 'Months'
     },
 ];
@@ -85,23 +85,23 @@ export const libraries = [
     {
         name: 'reactstrap'
     },
-    {
-        name: 'moment'
-    },
-    {
-        name: 'lodash'
-    },
-    {
-        name: 'react-slick'
-    },
-    {
-        name: 'uuid'
-    },
-    {
-        name: 'react-datepicker'
-    },
-    {
-        name: 'popper.js'
-    },
+    // {
+    //     name: 'moment'
+    // },
+    // {
+    //     name: 'lodash'
+    // },
+    // {
+    //     name: 'react-slick'
+    // },
+    // {
+    //     name: 'uuid'
+    // },
+    // {
+    //     name: 'react-datepicker'
+    // },
+    // {
+    //     name: 'popper.js'
+    // },
     
 ]

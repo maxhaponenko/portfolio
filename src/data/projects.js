@@ -59,50 +59,50 @@ export const projects = [
         ]    
         
     },
+    // {
+    //     templateType: 2, // With one row (only Laptop view image)
+    //     name: {
+    //         main: 'Electronics Firmware Application',
+    //         additional: undefined
+    //     },
+    //     projectType: 'Commercial project',
+    //     role: 'Frontend Developer',
+    //     workProcess: ['Prototyping', 'Frontend'],
+    //     imageSrc: {
+    //         desktopView: require('../media/images/projectsImages/qg_desktop.png'),
+    //     },
+    //     description: 'More than 10 unique pages and a lot of colorfull content. All layouts developed in 3 resolutions (desktop, tablet and mobile).',
+    //     link: null,
+    //     stack: [
+    //         {
+    //             name: 'Technologies',
+    //             items: ['Electron', 'React / Redux', 'Scss', 'Bootstrap'],
+    //         },
+    //         {
+    //             name: 'Workflow',
+    //             items: ['Git', 'Trello']
+    //         }
+    //     ]  
+    // },
     {
         templateType: 2, // With one row (only Laptop view image)
-        name: {
-            main: 'Electronics Firmware Application',
-            additional: undefined
-        },
-        projectType: 'Commercial project',
-        role: 'Frontend Developer',
-        workProcess: ['Prototyping', 'Frontend'],
-        imageSrc: {
-            desktopView: require('../media/images/projectsImages/qg_desktop.png'),
-        },
-        description: 'More than 10 unique pages and a lot of colorfull content. All layouts developed in 3 resolutions (desktop, tablet and mobile).',
-        link: null,
-        stack: [
-            {
-                name: 'Technologies',
-                items: ['Electron', 'React / Redux', 'Scss', 'Bootstrap'],
-            },
-            {
-                name: 'Workflow',
-                items: ['Git', 'Trello']
-            }
-        ]  
-    },
-    {
-        templateType: 1, // With one row (only Laptop view image)
         name: {
             main: '.this CV website',
             additional: undefined
         },
-        projectType: 'Commercial project',
-        role: 'Co-founder, UI/UX designer, HTML/CSS coder',
+        projectType: 'Personal and can say commercial',
+        role: 'UI/UX designer, Frontend developer',
         workProcess: ['Prototyping', 'UI/UX design', 'Frontend'],
         imageSrc: {
-            desktopView: require('../media/images/projectsImages/press_desktop.png'),
-            mobileView: require('../media/images/projectsImages/press_mobile.png')
+            desktopView: require('../media/images/projectsImages/cv_desktop.png'),
+            // mobileView: require('../media/images/projectsImages/press_mobile.png')
         },
-        description: 'More than 10 unique pages and a lot of colorfull content. All layouts developed in 3 resolutions (desktop, tablet and mobile).',
+        description: '5 pages using React. Totally responsive: from 320px width devices to Full HD. Native navigation menu created with usage of only React library.',
         link: null,
         stack: [
             {
                 name: 'Technologies',
-                items: ['React / Redux', 'Scss', 'Bootstrap'],
+                items: ['React', 'Scss', 'Bootstrap', 'Reactstrap'],
             },
             {
                 name: 'Workflow',

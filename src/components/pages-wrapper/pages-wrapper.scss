@@ -36,10 +36,16 @@ header {
         overflow: hidden;
         border: 1px solid #808080;
         box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+        cursor: pointer;
+        transition: 0.5s all;
         img {
             max-width: 100%;
             height: auto;
             transform: scaleX(-1);
+        }
+        &:hover {
+            border: 1px solid $color-blue-dark;
+            box-shadow: 0px 1px 5px rgba(0,0,0,0.7);
         }
     }
     &__text {

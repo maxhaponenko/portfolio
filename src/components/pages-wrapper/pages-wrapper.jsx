@@ -3,7 +3,8 @@ import { withRouter } from 'react-router';
 import profileImage from '../../media/images/profile-image.jpg';
 import Navigation from './navigation';
 import ContactsModal from '../modals/contacts.modal';
-import { mainSettings } from 'settings/main-settings'
+import { mainSettings } from 'settings/main-settings';
+import { publicPaths } from 'routes/paths';
 import './pages-wrapper.scss';
 
 class PagesWrapper extends Component {
@@ -38,7 +39,7 @@ class PagesWrapper extends Component {
                 <header>
                     <div className="profile-container">
                         <div className="profile">
-                            <div className="profile__photo">
+                            <div className="profile__photo" onClick={() => this.props.history.push('/')}>
                                 <img src={profileImage} alt="profile"/>
                             </div>
                             <div className="profile__text">
@@ -60,7 +61,7 @@ class PagesWrapper extends Component {
                                         <i className="far fa-clock"></i>
                                     </div>
                                     <div className="rates__hourly--text">
-                                        <span>from</span> $12 / <span>hour</span>
+                                        <span>from</span> $8 / <span>hour</span>
                                     </div>
                                 </div>
                             )}

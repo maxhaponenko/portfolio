@@ -10,27 +10,35 @@ export const experience = [
                 title: 'Responsibilities',
                 text: 'Working in this company was great opportunity to gain new experience on data bases',
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Creating the responsive layout for different variety of components and perfect layout for different languages',
+                    'Using the Rest API and thunk middleware to connect to the server',
+                    'Bug fixing',
+                    'Creating complex and reusable components',
+                    'Changes and improvements in routing and redirect policy',
+                    'Components design development'
                 ]
             },
             {
                 title: 'Workflow / dev tools',
                 text: undefined,
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Git',
+                    'Azure DevOps',
+                    'Slack',
+                    'SCRUM'
                 ]
             },
             {
-                title: 'Team-building',
+                title: 'Technologies and libs',
                 text: undefined,
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'ES6+',
+                    'React & Redux',
+                    'Redux-thunk',
+                    'Scss, CSS Modules',
+                    'Reactstrap',
+                    'Moment.js',
+                    'ApexCharts.js'
                 ]
             },
         ]
