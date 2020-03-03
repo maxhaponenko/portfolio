@@ -7,7 +7,7 @@ export const education = [
         relatedToPositions: ['frontend']
     },
     {
-        dates: 'Nov 2015 - Jan 2016',
+        dates: 'June 2013 - Aug 2013',
         universityName: 'CodeCademy',
         universityDescription: 'HTML/CSS course',
         group: 'frontend',
