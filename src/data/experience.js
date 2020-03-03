@@ -102,7 +102,7 @@ export const experience = [
     {
         imgSrc: require('../media/images/companiesLogos/logo_escapequest.png'),
         companyName: 'Escape Quest',
-        role: 'Franchisee Director',
+        role: 'Entertainment location Director',
         dates: 'Dec 2015 - Nov 2016',
         descriptionItems: [
             {
