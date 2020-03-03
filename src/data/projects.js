@@ -97,7 +97,7 @@ export const projects = [
             desktopView: require('../media/images/projectsImages/cv_desktop.png'),
             // mobileView: require('../media/images/projectsImages/press_mobile.png')
         },
-        description: '5 pages using React. Totally responsive: from 320px width devices to Full HD. Native navigation menu created with usage of only React library.',
+        description: '5 pages using React. Totally responsive: from 320px width devices to Full HD. Native navigation menu created with React library only.',
         link: null,
         stack: [
             {

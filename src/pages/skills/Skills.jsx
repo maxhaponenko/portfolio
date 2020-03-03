@@ -80,7 +80,7 @@ export default class Skills extends Component {
                                         <div className="tools__block_items-list__item">- Chrome DevTools</div>
                                         <div className="tools__block_items-list__item">- React Developer Tools</div>
                                         <div className="tools__block_items-list__item">- Redux DevTools</div>
-                                        <div className="tools__block_items-list__item">- Postman</div>
+                                        {/* <div className="tools__block_items-list__item">- Postman</div> */}
                                         <div className="tools__block_items-list__item">- Pixel Perfect</div>
                                     </div>
                                 </div>

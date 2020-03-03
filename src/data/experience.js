@@ -8,7 +8,7 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: 'Working in this company was great opportunity to gain new experience on data bases',
+                text: 'This company give me an opportunity to get real team based commercial experience. I am involved in:',
                 list: [
                     'Creating the responsive layout for different variety of components and perfect layout for different languages',
                     'Using the Rest API and thunk middleware to connect to the server',
@@ -51,20 +51,19 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: undefined,
+                text: 'I got a job as a marketing manager, but over time I also began to perform frontend work',
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Responsive and cross browser layout (without css frameworks)',
+                    'Communication with the owner and partners exclusively in English (correspondence and live talk)',
+                    'Negotiation and communication with developers in upWork (only in English). Managing freelance orders'
                 ]
             },
             {
-                title: 'Workflow / dev tools',
+                title: 'Workflow & Tools',
                 text: undefined,
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Trello',
+                    'SCRUM'
                 ]
             }
         ]
@@ -77,20 +76,25 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: undefined,
+                text: 'During this project I closed a lot of different functionalities. But main responsibility for me was to deliver product to the market and test business model for viability. Here is a list of functionalities:',
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Business modeling',
+                    'Managing workflow and product developing',
+                    'Communication with investor and partners',
+                    'Interface prototyping',
+                    'UI/UX design development',
+                    'Frontend development',
+                    'Writing TR for Unity, Frontend and Backend development'
                 ]
             },
             {
-                title: 'Workflow / dev tools',
+                title: 'Workflow & Tools & Software',
                 text: undefined,
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Google docs',
+                    'Trello',
+                    'Photoshop',
+                    'drow.io'
                 ]
             }
         ]
@@ -103,20 +107,12 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: undefined,
+                text: 'Not related to Frontend, but who knows =) :',
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
-                ]
-            },
-            {
-                title: 'Workflow / dev tools',
-                text: undefined,
-                list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Сreation of scenery for the quest room',
+                    'Сustomer service management',
+                    'Marketing and advertising',
+                    'Work with partners'
                 ]
             }
         ]
@@ -129,20 +125,20 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: undefined,
+                text: 'I was working with a partner, so we divided the functionality into two. Here is my part:',
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'R&D of the main business processes for key value proposition',
+                    'Interface prototyping',
+                    'HTML & CSS layout of the landing page from PSD file'
                 ]
             },
             {
-                title: 'Workflow / dev tools',
-                text: undefined,
+                title: 'Technologies',
+                text: 'The very beginning of my frontend experience, thats why:',
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'HTML & CSS',
+                    'JS',
+                    'Slick.js'
                 ]
             }
         ]
@@ -155,20 +151,19 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: undefined,
+                text: 'The best and positive experience in business I had. I launched hostel which successfully works till nowadays. Here what I was doing related to frontend development:',
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Writing the technical requirements for website development',
+                    'Communication with project manager as product owner during all process of development',
+                    'Q&A and writing tasks for edits',
+                    'Negotiating with SEO specialists'
                 ]
             },
             {
-                title: 'Workflow / dev tools',
-                text: undefined,
+                title: 'Dev tools',
+                text: 'Only one tool I used to make changes of the layout manually and create desired visual result of the UI tasks:',
                 list: [
-                    'Wireframes prototyping and writing of the technical requirements for website',
-                    'Negotiated as client with developers and QA testing',
-                    'Lorem ipsum something shpould be here as text to show'
+                    'Chrome Dev Tools'
                 ]
             }
         ]

@@ -4,7 +4,7 @@ import profileImage from '../../media/images/profile-image.jpg';
 import Navigation from './navigation';
 import ContactsModal from '../modals/contacts.modal';
 import { mainSettings } from 'settings/main-settings';
-import { publicPaths } from 'routes/paths';
+// import { publicPaths } from 'routes/paths';
 import './pages-wrapper.scss';
 
 class PagesWrapper extends Component {
