@@ -26,7 +26,7 @@ export const technicalSkills = [
     },
     {
         name: 'React & Redux',
-        experience: 8,
+        experience: 7,
         expType: 'Months'
     },
     {
@@ -36,7 +36,7 @@ export const technicalSkills = [
     },
     {
         name: 'Electron.js',
-        experience: 'familiar with',
+        experience: 1,
         expType: ''
     },
     {
