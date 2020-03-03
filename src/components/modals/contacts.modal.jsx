@@ -22,17 +22,14 @@ export default class ContactsModal extends React.Component {
                         }} className="close-icon"><i class="fas fa-times"></i></div>
                         <div className="contacts-block">
                             <div className="email">gaponenko.mm@gmail.com</div>
-                            <div className="phone">+380676758482</div>
+                            <div className="phone">+38 067 675 84 82</div>
                             <div className="social-block">
-                                <i className="flaticon flaticon-facebook-logo"></i>
-                                <i className="flaticon flaticon-linkedin-letters"></i>
+                                <i className="flaticon flaticon-facebook-logo" onClick={() => window.open('https://www.facebook.com/max.haponenko', '_blank')}></i>
+                                <i className="flaticon flaticon-linkedin-letters" onClick={() => window.open('https://www.linkedin.com/in/max-haponenko/', '_blank')}></i>
                             </div>
-                            <div className="available">Avaliable every day from 10 am to 7 pm (+3 UDT)</div>
+                            <div className="available">Available every day from 10 am to 7 pm</div>
                         </div>
                     </ModalBody>
-                    {/* <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Close</Button>
-                    </ModalFooter> */}
                 </Modal>
             </div>
         )
