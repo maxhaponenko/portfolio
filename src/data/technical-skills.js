@@ -37,7 +37,7 @@ export const technicalSkills = [
     {
         name: 'Electron.js',
         experience: 1,
-        expType: ''
+        expType: 'Months'
     },
     {
         name: 'Webpack',

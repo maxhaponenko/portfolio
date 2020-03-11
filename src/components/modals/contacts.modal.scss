@@ -68,9 +68,10 @@
     i {
         font-size: 20px;
         color: $color-font-light-grey;
+        margin-right: 10px;
         cursor: pointer;
-        &:first-child {
-            margin-right: 10px;
+        &:last-child {
+            margin-right: 0px;
         }
         &:hover {
             color: $color-blue;

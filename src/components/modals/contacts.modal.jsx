@@ -24,6 +24,7 @@ export default class ContactsModal extends React.Component {
                             <div className="email">gaponenko.mm@gmail.com</div>
                             <div className="phone">+38 067 675 84 82</div>
                             <div className="social-block">
+                                <i className="flaticon flaticon-github-logo" onClick={() => window.open('https://github.com/maxhaponenko', '_blank')}></i>
                                 <i className="flaticon flaticon-facebook-logo" onClick={() => window.open('https://www.facebook.com/max.haponenko', '_blank')}></i>
                                 <i className="flaticon flaticon-linkedin-letters" onClick={() => window.open('https://www.linkedin.com/in/max-haponenko/', '_blank')}></i>
                             </div>
