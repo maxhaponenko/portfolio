@@ -28,7 +28,7 @@ export default class ContactsModal extends React.Component {
                                 <i className="flaticon flaticon-facebook-logo" onClick={() => window.open('https://www.facebook.com/max.haponenko', '_blank')}></i>
                                 <i className="flaticon flaticon-linkedin-letters" onClick={() => window.open('https://www.linkedin.com/in/max-haponenko/', '_blank')}></i>
                             </div>
-                            <div className="available">Available every day from 10 am to 7 pm</div>
+                            <div className="available">Available every day from 10 am to 7 pm ( UTC +3 | Kyiv )</div>
                         </div>
                     </ModalBody>
                 </Modal>

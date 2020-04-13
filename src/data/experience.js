@@ -8,14 +8,15 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: 'This company give me an opportunity to get real team based commercial experience. I am involved in:',
+                text: 'This company give me an opportunity to get real team based commercial experience. Now I am involved in:',
                 list: [
                     'Creating the responsive layout for different variety of components and perfect layout for different languages',
                     'Using the Rest API and thunk middleware to connect to the server',
                     'Bug fixing',
                     'Creating complex and reusable components',
                     'Changes and improvements in routing and redirect policy',
-                    'Components design development'
+                    'Components design development',
+                    'Email templates layout'
                 ]
             },
             {
@@ -24,6 +25,7 @@ export const experience = [
                 list: [
                     'Git',
                     'Azure DevOps',
+                    'Mailjet',
                     'Slack',
                     'SCRUM'
                 ]

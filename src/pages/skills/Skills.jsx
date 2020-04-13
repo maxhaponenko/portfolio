@@ -70,6 +70,7 @@ export default class Skills extends Component {
                                     <div className="tools__block_items-list workflow">
                                         <div className="tools__block_items-list__item">- Trello</div>
                                         <div className="tools__block_items-list__item">- Asana</div>
+                                        <div className="tools__block_items-list__item">- Mailjet</div>
                                         <div className="tools__block_items-list__item">- Azure DevOps</div>
                                         <div className="tools__block_items-list__item">- Slack</div>
                                     </div>

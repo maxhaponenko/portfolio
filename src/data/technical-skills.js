@@ -1,17 +1,17 @@
 export const technicalSkills = [
     {
         name: 'HTML, CSS',
-        experience: 16,
+        experience: 18,
         expType: 'Months'
     },
     {
         name: 'SCSS',
-        experience: 12,
+        experience: 14,
         expType: 'Months'
     },
     {
         name: 'Bootstrap',
-        experience: 7,
+        experience: 10,
         expType: 'Months'
     },
     {
@@ -21,18 +21,18 @@ export const technicalSkills = [
     },
     {
         name: 'JavaScript (ES6+)',
-        experience: 10,
+        experience: 12,
         expType: 'Months'
     },
     {
         name: 'React & Redux',
-        experience: 7,
+        experience: 8,
         expType: 'Months'
     },
     {
         name: 'Express.js',
-        experience: 'familiar with',
-        expType: ''
+        experience: 1,
+        expType: 'Months'
     },
     {
         name: 'Electron.js',
@@ -51,7 +51,7 @@ export const technicalSkills = [
     },
     {
         name: 'Photoshop',
-        experience: 4,
+        experience: 6,
         expType: 'Months'
     },
     {
@@ -85,18 +85,30 @@ export const libraries = [
     {
         name: 'reactstrap'
     },
+    {
+        name: 'moment'
+    },
+    {
+        name: 'lodash'
+    },
+    {
+        name: 'jsonwebtoken'
+    },
+    {
+        name: 'mongoose'
+    },
+    {
+        name: 'bcryptjs'
+    },
     // {
-    //     name: 'moment'
-    // },
-    // {
-    //     name: 'lodash'
+    //     name: 'bcryptjs'
     // },
     // {
     //     name: 'react-slick'
     // },
-    // {
-    //     name: 'uuid'
-    // },
+    {
+        name: 'uuid'
+    },
     // {
     //     name: 'react-datepicker'
     // },
