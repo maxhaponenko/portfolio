@@ -31,7 +31,12 @@ export const technicalSkills = [
     },
     {
         name: 'Express.js',
-        experience: 1,
+        experience: 2,
+        expType: 'Months'
+    },
+    {
+        name: 'Mongoose',
+        experience: 2,
         expType: 'Months'
     },
     {
