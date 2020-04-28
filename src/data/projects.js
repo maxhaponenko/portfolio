@@ -87,7 +87,7 @@ export const projects = [
     {
         templateType: 2, // With one row (only Laptop view image)
         name: {
-            main: '.this CV website',
+            main: 'this CV website',
             additional: undefined
         },
         projectType: 'Personal and can say commercial',

@@ -26,7 +26,7 @@ export const technicalSkills = [
     },
     {
         name: 'React & Redux',
-        experience: 8,
+        experience: 9,
         expType: 'Months'
     },
     {
@@ -51,8 +51,8 @@ export const technicalSkills = [
     },
     {
         name: 'Git',
-        experience: 1000,
-        expType: 'commits'
+        experience: '',
+        expType: ''
     },
     {
         name: 'Photoshop',
