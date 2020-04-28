@@ -59,11 +59,11 @@ export const technicalSkills = [
         experience: 6,
         expType: 'Months'
     },
-    {
-        name: 'InVision Studio',
-        experience: 2,
-        expType: 'Months'
-    },
+    // {
+    //     name: 'InVision Studio',
+    //     experience: 2,
+    //     expType: 'Months'
+    // },
 ];
 export const libraries = [
     {
