@@ -25,6 +25,11 @@ export const technicalSkills = [
         expType: 'Months'
     },
     {
+        name: 'TypeScript',
+        experience: 2,
+        expType: 'Months'
+    },
+    {
         name: 'React & Redux',
         experience: 9,
         expType: 'Months'
@@ -59,11 +64,11 @@ export const technicalSkills = [
         experience: 6,
         expType: 'Months'
     },
-    // {
-    //     name: 'InVision Studio',
-    //     experience: 2,
-    //     expType: 'Months'
-    // },
+    {
+        name: 'InVision Studio',
+        experience: 2,
+        expType: 'Months'
+    },
 ];
 export const libraries = [
     {
@@ -89,6 +94,12 @@ export const libraries = [
     },
     {
         name: 'reactstrap'
+    },
+    {
+        name: 'react-transition-group'
+    },
+    {
+        name: 'apex-charts'
     },
     {
         name: 'moment'

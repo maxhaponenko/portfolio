@@ -187,8 +187,13 @@ export default class ColumnListResponsive extends React.Component {
 
         const getMaxHeight = () => {
             let totalItemsHeight = (this.state.oneItemHeight * this.state.items.length)
-            let result = (totalItemsHeight / (this.state.displayColumns)) + 20
-            console.log(`${result}px`)
+            let columnsEqual = Number.isInteger(this.state.items.length / this.state.maxColumns)
+            let result
+            if (columnsEqual) {
+                result = (totalItemsHeight / (this.state.displayColumns))
+            } else {
+                result = (totalItemsHeight / (this.state.displayColumns)) + this.state.oneItemHeight
+            }
             return `${result}px`
         }
 
@@ -212,8 +217,6 @@ export default class ColumnListResponsive extends React.Component {
             height: 'auto',
             visibility: getCurrentVisibility()
         }
-
-        console.log(this.state)
 
         return (
             <div style={columnsBlock}>

@@ -90,14 +90,14 @@ export const projects = [
             main: 'this CV website',
             additional: undefined
         },
-        projectType: 'Personal and can say commercial',
+        projectType: 'Personal',
         role: 'UI/UX designer, Frontend developer',
         workProcess: ['Prototyping', 'UI/UX design', 'Frontend'],
         imageSrc: {
             desktopView: require('../media/images/projectsImages/cv_desktop.png'),
             // mobileView: require('../media/images/projectsImages/press_mobile.png')
         },
-        description: '5 pages using React. Totally responsive: from 320px width devices to Full HD. Native navigation menu created with React library only.',
+        description: '5 pages using React. Totally responsive: from 320px width devices to Full HD. Native navigation menu.',
         link: null,
         stack: [
             {
