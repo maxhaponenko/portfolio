@@ -73,23 +73,23 @@ class NavItems extends Component {
     render() { 
         return (
             <div ref={ref => this.menuBlock = ref}  className={`nav-menu`}>
-                <NavLink exact to="/" ref={ref => this.item1 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.main)} >
+                <NavLink exact to={publicPaths.main} ref={ref => this.item1 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.main)} >
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Main</div>
                 </NavLink>
-                <NavLink to="/projects" ref={ref => this.item2 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.projects)}>
+                <NavLink to={publicPaths.projects} ref={ref => this.item2 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.projects)}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Projects</div>
                 </NavLink>
-                <NavLink to="/skills" ref={ref => this.item3 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.skills)}>
+                <NavLink to={publicPaths.skills} ref={ref => this.item3 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.skills)}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Skills<span>Technologies, Frameworks, Libs, Tools</span></div>
                 </NavLink>
-                <NavLink to="/experience" ref={ref => this.item4 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.experience)}>
+                <NavLink to={publicPaths.experience} ref={ref => this.item4 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.experience)}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Experience <span>Timeline and projects I was involved in</span></div>
                 </NavLink>
-                <NavLink to="/education" ref={ref => this.item5 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.education)}>
+                <NavLink to={publicPaths.education} ref={ref => this.item5 = ref} className={`nav-menu__item`} onClick={() => this.handleNavigationAction(publicPaths.education)}>
                     <span className="pointer"></span>
                     <div className="nav-menu__item--text">Education</div>
                 </NavLink>

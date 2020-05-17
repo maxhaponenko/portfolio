@@ -4,7 +4,7 @@ import profileImage from '../../media/images/profile-image.jpg';
 import Navigation from './navigation';
 import ContactsModal from '../modals/contacts.modal';
 import { mainSettings } from 'settings/main-settings';
-// import { publicPaths } from 'routes/paths';
+import { publicPaths } from 'routes/paths';
 import './pages-wrapper.scss';
 
 class PagesWrapper extends Component {
@@ -39,7 +39,7 @@ class PagesWrapper extends Component {
                 <header>
                     <div className="profile-container">
                         <div className="profile">
-                            <div className="profile__photo" onClick={() => this.props.history.push('/')}>
+                            <div className="profile__photo" onClick={() => this.props.history.push(publicPaths.main)}>
                                 <img src={profileImage} alt="profile"/>
                             </div>
                             <div className="profile__text">
