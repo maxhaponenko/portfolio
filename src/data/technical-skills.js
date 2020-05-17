@@ -1,17 +1,89 @@
 export const technicalSkills = [
     {
         name: 'HTML, CSS',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'SCSS',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Bootstrap',
+        experience: '',
+        expType: ''
+    },
+    // {
+    //     name: 'Pug / Jade',
+    //     experience: '',
+    //     expType: ''
+    // },
+    {
+        name: 'JavaScript (ES6+)',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'TypeScript',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'React & Redux',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Express.js',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Mongoose',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Electron.js',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Webpack',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Git',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Photoshop',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'InVision Studio',
+        experience: '',
+        expType: ''
+    },
+];
+export const technicalSkillsOld = [
+    {
+        name: 'HTML, CSS',
         experience: 18,
         expType: 'Months'
     },
     {
         name: 'SCSS',
-        experience: 14,
+        experience: 16,
         expType: 'Months'
     },
     {
         name: 'Bootstrap',
-        experience: 10,
+        experience: 16,
         expType: 'Months'
     },
     {
@@ -21,7 +93,7 @@ export const technicalSkills = [
     },
     {
         name: 'JavaScript (ES6+)',
-        experience: 12,
+        experience: 14,
         expType: 'Months'
     },
     {
@@ -31,7 +103,7 @@ export const technicalSkills = [
     },
     {
         name: 'React & Redux',
-        experience: 9,
+        experience: 11,
         expType: 'Months'
     },
     {

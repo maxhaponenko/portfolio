@@ -19,8 +19,9 @@ export default class Main extends Component {
                                 <div className="main__container-heading">Summary</div> 
                                 <div className="main__container-contentBlock">
                                     <p><span>Status:</span> open to proposals</p>
-                                    <p><span>Job:</span> working in TransferRoom Ltd (frontend developer)</p>
-                                    <p><span>Using now:</span> JS ES6+, React & Redux, Scss, Azure DevOps, Invision Studio, SCRUM</p>
+                                    <p><span>Job:</span> frontend developer in TransferRoom Ltd</p>
+                                    <p><span>Using now:</span> JS ES6+, TypeScript, React, Redux, Scss, Azure DevOps, SCRUM</p>
+                                    <p><span>General experience:</span> 1.5 years</p>
                                     <p><span>Languages:</span></p>
                                     <ul>
                                         <li>English - Intermediate / Upper-intermediate</li>

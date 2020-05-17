@@ -15,6 +15,7 @@ export const experience = [
                     'Bug fixing',
                     'Creating complex and reusable components',
                     'Changes and improvements in routing and redirect policy',
+                    'Components refactoring to TypeScript',
                     'Components design development',
                     'Email templates layout'
                 ]
@@ -35,7 +36,9 @@ export const experience = [
                 text: undefined,
                 list: [
                     'ES6+',
-                    'React & Redux',
+                    'TypeScript',
+                    'React',
+                    'Redux',
                     'Redux-thunk',
                     'Scss, CSS Modules',
                     'Reactstrap',
@@ -53,7 +56,7 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: 'I got a job as a marketing manager, but over time I also began to perform frontend work',
+                text: 'I got a job as a marketing manager, but over time I also started to perform frontend work',
                 list: [
                     'Responsive and cross browser layout (without css frameworks)',
                     'Communication with the owner and partners exclusively in English (correspondence and live talk)',
