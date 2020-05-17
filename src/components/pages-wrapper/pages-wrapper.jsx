@@ -93,9 +93,9 @@ class PagesWrapper extends Component {
                                 this.toggleContactsModal()
                             }}>contacts</div>
                         </div> */}
-                        <div className="designed" onClick={() => {
+                        {/* <div className="designed" onClick={() => {
                             this.switchFirstLetter();
-                            }}>designed by Max <span>{this.state.firstSurnameLetter}</span>aponenko</div>
+                            }}>designed by Max <span>{this.state.firstSurnameLetter}</span>aponenko</div> */}
                 </footer>
                 <ContactsModal isOpen={this.state.isModalOpen} toggle={() => this.toggleContactsModal()}/>
             </Fragment>
