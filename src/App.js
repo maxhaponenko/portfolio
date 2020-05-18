@@ -11,7 +11,7 @@ import { publicPaths } from 'routes/paths';
 import PagesWrapper from 'components/pages-wrapper/pages-wrapper';
 import ErrorPage from 'pages/error-page/ErrorPage'
 
-const queryString = require('query-string');
+// const queryString = require('query-string');
 
 const App = () => {
     return (
