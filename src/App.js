@@ -49,10 +49,10 @@ class TransitionWrapper extends React.Component {
 
 const AppWithTransition = withRouter(TransitionWrapper)
 
-const params = queryString.parse(document.location.search);
-const redirect = params.redirect; // this would be "abcdefg" if the query was "?redirect=abcdefg"
-if (document.location.pathname === '/' && redirect) {
-  document.location.assign(`${document.location.origin}/${redirect}`);
-}
+// const params = queryString.parse(document.location.search);
+// const redirect = params.redirect; // this would be "abcdefg" if the query was "?redirect=abcdefg"
+// if (document.location.pathname === '/' && redirect) {
+//   document.location.assign(`${document.location.origin}/${redirect}`);
+// }
 
 export default App;
