@@ -1,1 +1,1 @@
-export const extraPathName = '/portfolio'
+export const basename = '/portfolio'

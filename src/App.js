@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { basename } from 'config'
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Main from 'pages/main/Main.jsx';
 import Projects from 'pages/projects/Projects';
@@ -12,7 +13,7 @@ import ErrorPage from 'pages/error-page/ErrorPage'
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
             <PagesWrapper>
                 <AppWithTransition />
             </PagesWrapper>
