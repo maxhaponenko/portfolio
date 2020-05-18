@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  // "homepage": "https://maxhaponenko.github.io/portfolio",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
