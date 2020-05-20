@@ -6,4 +6,5 @@ export const publicPaths = {
     skills: `/skills`,
     experience: `/experience`,
     education: `/education`,
+    cvPdf: `/cv-pdf`
 }

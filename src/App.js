@@ -10,6 +10,7 @@ import Experience from 'pages/experience/Experience';
 import { publicPaths } from 'routes/paths';
 import PagesWrapper from 'components/pages-wrapper/pages-wrapper';
 import ErrorPage from 'pages/error-page/ErrorPage'
+import CvPdf from 'pages/cv-pdf/cv-pdf.entry'
 
 // const queryString = require('query-string');
 
@@ -39,6 +40,7 @@ class TransitionWrapper extends React.Component {
                         <Route path={publicPaths.skills} component={Skills} />
                         <Route path={publicPaths.education} component={Education} />
                         <Route path={publicPaths.experience} component={Experience} />
+                        <Route path={publicPaths.cvPdf} component={CvPdf} />
                         <Route component={ErrorPage} />
                     </Switch>
                 </CSSTransition>

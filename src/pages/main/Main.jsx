@@ -65,6 +65,12 @@ export default class Main extends Component {
                                     {/* <button className="btn btn-download btn-download--aqua">
                                         Download
                                     </button> */}
+                                    <div 
+                                        className="btn btn-download btn-download--aqua"
+                                        onClick={() => this.props.history.push(`${publicPaths.cvPdf}?pdf=true`)}
+                                    >
+                                        Download
+                                    </div>
                                     <Link className="btn btn-download btn-download--aqua" to="/files/CV_Max_Haponenko_Front_End.pdf" target="_blank" download>Download</Link>
                                 </div>
                             </div>
