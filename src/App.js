@@ -11,6 +11,7 @@ import { publicPaths } from 'routes/paths';
 import PagesWrapper from 'components/pages-wrapper/pages-wrapper';
 import ErrorPage from 'pages/error-page/ErrorPage'
 import CvPdf from 'pages/cv-pdf/cv-pdf.entry'
+import Test from 'pages/test/test';
 
 // const queryString = require('query-string');
 
@@ -41,6 +42,7 @@ class TransitionWrapper extends React.Component {
                         <Route path={publicPaths.education} component={Education} />
                         <Route path={publicPaths.experience} component={Experience} />
                         <Route path={publicPaths.cvPdf} component={CvPdf} />
+                        <Route path="/test" component={Test} />
                         <Route component={ErrorPage} />
                     </Switch>
                 </CSSTransition>
