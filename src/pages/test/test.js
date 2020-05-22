@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import { lib, translate } from 'translation-module/translations/translator'
+import lib from 'translation-module/translations/translator'
 
 export default class Test extends Component {
 
 
     render() {
-
-        // console.log(translate(lib.t.en))
+        
+        console.log(lib.t.en.a.b.some)
         return (
             <div>
-                Test component
+                Translation: {lib.t.en.a.a}
             </div>
         )
     }

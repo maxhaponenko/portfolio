@@ -1,89 +1,75 @@
 import { translationsEs } from './translationES'
 import { translationsEn } from './translationEN'
-import { technicalSkillsOld } from 'data/technical-skills'
-// import { Translib } from '../npm-module'
+const locale = 'en'
 
 class LibCreator {
-    defaultOptions = {
-        notEqualLibs: false
-    }
     constructor(objects, options = this.defaultOptions) {
         this.dictionary = objects
-        this._checkLibs()
         this.t = this._prepareLibs()
     }
-    _checkLibs(objects) {
-        // console.log(this.dictionary)
+
+    locale(string) {
+        this.locale = string
     }
 
-    translate(string) {
-        return string.toUpperCase()
-    }
+    
 
     _prepareLibs() {
         let t = {}
         Object.keys(this.dictionary).forEach(item => {
             t[item] = this.dictionary[item]
         })
+        this.languages = Object.keys(this.dictionary)
 
-        
-
-        const parenter = {
-            // get: function (target, prop) {
-            //     if (prop in target) {
-            //         return target[prop]
-            //     } else {
-            //         return 0
-            //     }
-            // },
-            set: function (target, prop, value) {
-                if (typeof value === "object") {
-                    var p = new Proxy({ parent: target }, parenter);
-                    for (var key in value) {
-                        p[key] = value[key];
-                    }
-                    target[prop] = p;
-                    return true
+        const translate = (target) => {
+            if (target && typeof target === 'string') {
+                if (this.languages.includes(this.locale)) {
+                    return target + '-translation_added'
                 } else {
-                    target[prop] = value;
-                    // target[prop].translate = () => this.translate(target);
-
-                    return true
+                    console.warn(`Locale does not match any library language. Translation is provided in ${this.languages[0]}`)
                 }
             }
         }
 
-        var root = new Proxy(t, parenter);
-        console.log(root.en.menu.clubAds.parent.en)
+        var validator = {
+            get(target, key) {
+                if (typeof target[key] === 'object' && target[key] !== null) {
+                    return new Proxy(target[key], validator)
+                } else {
+                    let translated = translate(target[key]);
+                    // debugger
+                    return translated
+                }
+            },
+            set(target, key, value) {
+                console.log(target);
+                console.log(key);
+                console.log(value);
+                console.error('You can`t change value of translation lib')
+                return false
+            }
+        }
 
-        // return t
+        const lib = new Proxy(t, validator)
+
+        return lib
     }
-    
+
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export function translate(object) {
-//     console.log(object)
-//     debugger
-// }
-
-export const lib = new LibCreator({
+// Create lib with different languages
+const lib = new LibCreator({
     en: translationsEn,
     es: translationsEs
 })
 
-console.log(lib.t)
+// Register locale
+lib.locale(locale)
+
+
+export default lib
+
+
+
