@@ -33,90 +33,46 @@ class LibCreator {
 
         const injectPaths = (obj) => {  // The function 
             const discoveredObjects = []; // For checking for cyclic object
-            // const path = [];    // The current path being searched
-            // const results = []; // The array of paths that satify the predicate === true
+
             if (!obj && (typeof obj !== "object" || Array.isArray(obj))) {
                 throw new TypeError("First argument of finPropPath is not the correct type Object");
             }
 
             (function find(obj, parentPath) {
                 for (const key of Object.keys(obj)) {  // use only enumrable own properties.
-                    let keysLeft = Object.keys(obj).length
                     if ( typeof obj[key] === "string" ) {   
-                          // Found a path
-                        let a = []
-                        let results = []
-                        a.push(key);                // push the key
-                        results.push(a.join("."));  // Add the found path to results
-
                         if (!parentPath) {
-                            obj[key] = `${results}=${obj[key]}`
-                            keysLeft = keysLeft - 1
+                            obj[key] = `${key}=${obj[key]}`
                         } else if (parentPath !== undefined && typeof parentPath === 'string') {
-                            obj[key] = `${parentPath}.${results}=${obj[key]}`
-                            keysLeft = keysLeft - 1
+                            obj[key] = `${parentPath}.${key}=${obj[key]}`
                         }
-
-                        // If there are no more properties to modify and script will go to near property -> clear parrentPath string
-                        if (keysLeft === 0) {
-                            let index = parentPath.lastIndexOf('.')
-                            let newParentPath = parentPath.slice(0, index)
-                            parentPath = newParentPath
-                        }
-                                         // remove the key.
                     } else {
                         const o = obj[key];   
                         parentPath = (!parentPath ? '' : parentPath + '.') + key              // The next object to be searched
-                        if (o && typeof o === "object" && !Array.isArray(o)) { 
-                              // check for null then type object
+                        if (o && typeof o === "object" && !Array.isArray(o)) { // check for null then type object
                             if (!discoveredObjects.find(obj => obj === o)) {  // check for cyclic link
                                 discoveredObjects.push(o);
                                 find(o, parentPath);
+
+                                // After child object uppdated
+                                // Need to remove one last parentPath node
+                                let index = parentPath.lastIndexOf('.')
+                                if (index > 0) {
+                                    let newParentPath = parentPath.slice(0, index)
+                                    parentPath = newParentPath
+                                } else {
+                                    parentPath = ''
+                                }
                             }
-                            
                         }
                     }
-                    
                 }
             } (obj));
-            console.log('Path injection done')
             console.log(obj)
         }
 
-        injectPaths(t);
-        debugger
-
-        // function path(c, name, v, currentPath, t) {
-        //     debugger
-        //     var currentPath = currentPath || "root";
-        
-        //     for(var i in c){
-        //       if(i == name && c[i] == v){
-        //         t = currentPath;
-        //       }
-        //       else if(typeof c[i] == "object"){
-        //         return path(c[i], name, v, currentPath + "." + i);
-        //       }
-        //     }
-        
-        //     return t + "." + name;
-        // };
-        
-
-        // let x = {
-        //     1: 2, 
-        //     s: 5, 
-        //     2: {
-        //         3: {
-        //             2: {
-        //                 s: 1, 
-        //                 p: 2
-        //             }
-        //         }
-        //     }
-        // }
-        // let a = path(x,"s", 1)
-        // console.log(a)
+        // Injects additional string value to each string property in object
+        injectPaths(t); 
 
         var validator = {
             get(target, key) {
@@ -124,7 +80,6 @@ class LibCreator {
                     return new Proxy(target[key], validator)
                 } else {
                     let translated = translate(target[key]);
-                    // debugger
                     return translated
                 }
             },
