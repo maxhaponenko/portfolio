@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
-import { basename } from 'config'
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Main from 'pages/main/Main.jsx';
 import Projects from 'pages/projects/Projects';
@@ -16,7 +15,7 @@ import CvPdf from 'pages/cv-pdf/cv-pdf.entry'
 
 const App = () => {
     return (
-        <BrowserRouter basename={basename}>
+        <BrowserRouter>
             <PagesWrapper>
                 <AppWithTransition />
             </PagesWrapper>
