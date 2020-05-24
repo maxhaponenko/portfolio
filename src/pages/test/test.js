@@ -5,11 +5,11 @@ export default class Test extends Component {
 
 
     render() {
-        
+        debugger
         console.log(lib.t.en.a.b.some)
         return (
             <div>
-                Translation: {lib.t.en.a.a}
+                {/* Translation: {lib.t.en.a.a} */}
             </div>
         )
     }

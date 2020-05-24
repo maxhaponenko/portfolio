@@ -1,9 +1,9 @@
 export const translationsEn = {
     a: {
-        c: 'TOST',
+        c: 'hello',
         b: {
-            some: 'SOME'
+            some: 'some'
         }
     },
-    b: 'hohoho'
+    b: 'uncle'
 };
