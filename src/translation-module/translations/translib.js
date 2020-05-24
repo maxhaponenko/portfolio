@@ -17,7 +17,6 @@ class TransLib {
         Object.keys(this.dictionary).forEach(item => {
             t[item] = this.dictionary[item]
         })
-        this.languages = Object.keys(this.dictionary)
 
         // Injects additional string value to each string property in object
         const injectPaths = (obj) => {  // The function 
@@ -96,22 +95,16 @@ class TransLib {
                     return new Proxy(target[key], validator)
                 } else {
                     let path = getPath(target[key]);
-                    // console.log(this)
                     let value = getValue(t, `${this.context.locale}${'.'}${path}`)
                     let translation = getTranslation(value)
-                    debugger
                     return translation
                 }
             },
             set(target, key, value) {
-                console.log(target);
-                console.log(key);
-                console.log(value);
                 console.error('You can`t change value of translation lib')
                 return false
             }
         }
-
         const lib = new Proxy(t, validator)
 
         return lib
