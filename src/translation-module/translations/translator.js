@@ -1,16 +1,26 @@
-import { translationsEs } from './translationES'
+import { translationsRu } from './translationRU'
 import { translationsEn } from './translationEN'
 import TransLib from './translib'
-const locale = 'en'
+const defaultLocale = 'en'
 
 // Create lib with different languages
 const lib = new TransLib({
     en: translationsEn,
-    es: translationsEs
+    ru: translationsRu
 })
 
-// Set locale
-lib.setLocale(locale)
+
+let locale = localStorage.getItem('locale')
+
+if (locale) {
+    lib.setLocale(locale)
+} else {
+    lib.setLocale(defaultLocale)
+    localStorage.setItem('locale', defaultLocale)
+}
+
+
+
 
 
 export default lib

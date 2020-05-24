@@ -1,9 +1,15 @@
 export const translationsEn = {
-    a: {
-        c: 'hello',
-        b: {
-            some: 'some'
-        }
+    greetings: {
+        hello: 'Hello',
+        goodEvening: 'Good evening',
+        simple: {
+            hi: 'Hi',
+            yo: 'Yo'
+        },
     },
-    b: 'uncle'
+    roles: {
+        father: 'Father',
+        sister: 'Sister',
+        uncle: 'Uncle'
+    }
 };

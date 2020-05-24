@@ -12,12 +12,13 @@ import PagesWrapper from 'components/pages-wrapper/pages-wrapper';
 import ErrorPage from 'pages/error-page/ErrorPage'
 import CvPdf from 'pages/cv-pdf/cv-pdf.entry'
 import Test from 'pages/test/test';
+import lib from 'translation-module/translations/translator'
 
 // const queryString = require('query-string');
 
 const App = () => {
     return (
-        <BrowserRouter basename={basename}>
+        <BrowserRouter>
             <PagesWrapper>
                 <AppWithTransition />
             </PagesWrapper>
@@ -35,7 +36,7 @@ class TransitionWrapper extends React.Component {
                     timeout={200}
                     unmountOnExit
                 >
-                    <Switch location={this.props.history.location}>
+                    <Switch location={this.props.history.location} locale={localStorage.getItem('locale')}>
                         <Route exact path={publicPaths.main} component={Main} />
                         <Route path={publicPaths.projects} component={Projects} />
                         <Route path={publicPaths.skills} component={Skills} />

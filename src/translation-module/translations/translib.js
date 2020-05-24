@@ -5,18 +5,24 @@ class TransLib {
     constructor(objects, options = this.defaultOptions) {
         this.dictionary = objects
         this.locale = 'en' // default
-        this.t = this._prepareLibs()
+        
+        this.languages = Object.keys(this.dictionary).map(item => item)
+        Object.keys(this.dictionary).forEach(key => {
+            this[key] = this.dictionary[key]
+        })
+
+        this.t = this._prepareLibs(this[this.languages[0]])
     }
 
     setLocale(string) {
         this.locale = string
     }
 
-    _prepareLibs = () => {
-        let t = {}
-        Object.keys(this.dictionary).forEach(item => {
-            t[item] = this.dictionary[item]
-        })
+    _prepareLibs = (obj = {}) => {
+        // let t = {}
+        // Object.keys(this.dictionary).forEach(item => {
+        //     t[item] = this.dictionary[item]
+        // })
 
         // Injects additional string value to each string property in object
         const injectPaths = (obj) => {  // The function 
@@ -59,12 +65,11 @@ class TransLib {
             console.log(obj)
         }
 
-        injectPaths(t); 
+        injectPaths(obj); 
 
         const getPath = (string) => {
             let lastSymbolIndex = string.indexOf('=')
-            let firstSymbolIndex = string.indexOf('.') + 1
-            let path = string.slice(firstSymbolIndex, lastSymbolIndex)
+            let path = string.slice(0, lastSymbolIndex)
             return path
         }
 
@@ -94,18 +99,24 @@ class TransLib {
                 if (typeof target[key] === 'object' && target[key] !== null) {
                     return new Proxy(target[key], validator)
                 } else {
-                    let path = getPath(target[key]);
-                    let value = getValue(t, `${this.context.locale}${'.'}${path}`)
-                    let translation = getTranslation(value)
-                    return translation
+                    if (typeof target[key] === 'string') {
+                        let path = getPath(target[key]);
+                        let objective = this.context[this.context.locale]
+                        let value = getValue(objective, `${path}`)
+                        let translation = getTranslation(value)
+                        return translation
+                    } else {
+                        console.error('You can`t translate objects')
+                    }
+                    
                 }
             },
             set(target, key, value) {
-                console.error('You can`t change value of translation lib')
+                console.error('You can`t change value of dictionary')
                 return false
             }
         }
-        const lib = new Proxy(t, validator)
+        const lib = new Proxy(obj, validator)
 
         return lib
 
