@@ -21,7 +21,7 @@ export default class Main extends Component {
                                     <p><span>Status:</span> open to proposals</p>
                                     <p><span>Job:</span> frontend developer in TransferRoom Ltd</p>
                                     <p><span>Using now:</span> JS ES6+, TypeScript, React, Redux, Scss, Azure DevOps, SCRUM</p>
-                                    <p><span>General experience:</span> 1.5 years</p>
+                                    <p><span>General experience:</span> 2 years of related experience</p>
                                     <p><span>Languages:</span></p>
                                     <ul>
                                         <li>English - Intermediate / Upper-intermediate</li>
@@ -71,7 +71,7 @@ export default class Main extends Component {
                                     >
                                         Download
                                     </div> */}
-                                    <Link className="btn btn-download btn-download--aqua" to="/files/CV_Max_Haponenko_Front_End.pdf" target="_blank" download>Download</Link>
+                                    <Link className="btn btn-download btn-download--aqua" to="/files/maxhaponenko_cv.pdf" target="_blank" download>Download</Link>
                                 </div>
                             </div>
                         </div>
