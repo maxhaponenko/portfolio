@@ -59,31 +59,34 @@ export const projects = [
         ]    
         
     },
-    // {
-    //     templateType: 2, // With one row (only Laptop view image)
-    //     name: {
-    //         main: 'Electronics Firmware Application',
-    //         additional: undefined
-    //     },
-    //     projectType: 'Commercial project',
-    //     role: 'Frontend Developer',
-    //     workProcess: ['Prototyping', 'Frontend'],
-    //     imageSrc: {
-    //         desktopView: require('../media/images/projectsImages/qg_desktop.png'),
-    //     },
-    //     description: 'More than 10 unique pages and a lot of colorfull content. All layouts developed in 3 resolutions (desktop, tablet and mobile).',
-    //     link: null,
-    //     stack: [
-    //         {
-    //             name: 'Technologies',
-    //             items: ['Electron', 'React / Redux', 'Scss', 'Bootstrap'],
-    //         },
-    //         {
-    //             name: 'Workflow',
-    //             items: ['Git', 'Trello']
-    //         }
-    //     ]  
-    // },
+    {
+        templateType: 2, // With one row (only Laptop view image)
+        name: {
+            main: 'Tests SPA',
+            additional: undefined
+        },
+        projectType: 'Pet project (in development)',
+        role: 'Frontend Developer',
+        workProcess: ['Prototyping', 'Frontend'],
+        imageSrc: {
+            desktopView: require('../media/images/projectsImages/tests-app-desctop.png'),
+        },
+        description: 'Tests single page application with responsive tutorial stepper and dynamic animation. The project is developing without any css/scss files at all.',
+        link: {
+            href: 'https://frontend-tests.netlify.app',
+            text: 'frontend-tests.netlify.app'
+        },
+        stack: [
+            {
+                name: 'Technologies',
+                items: ['React', 'Redux'],
+            },
+            {
+                name: 'Libs',
+                items: ['styled-components', 'antd']
+            }
+        ]  
+    },
     {
         templateType: 2, // With one row (only Laptop view image)
         name: {

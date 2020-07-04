@@ -1,24 +1,9 @@
 export const technicalSkills = [
     {
-        name: 'HTML, CSS',
+        name: 'React & Redux',
         experience: '',
         expType: ''
     },
-    {
-        name: 'SCSS',
-        experience: '',
-        expType: ''
-    },
-    {
-        name: 'Bootstrap',
-        experience: '',
-        expType: ''
-    },
-    // {
-    //     name: 'Pug / Jade',
-    //     experience: '',
-    //     expType: ''
-    // },
     {
         name: 'JavaScript (ES6+)',
         experience: '',
@@ -30,7 +15,12 @@ export const technicalSkills = [
         expType: ''
     },
     {
-        name: 'React & Redux',
+        name: 'SCSS & BEM',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Styled-components',
         experience: '',
         expType: ''
     },
@@ -188,9 +178,12 @@ export const libraries = [
     {
         name: 'bcryptjs'
     },
-    // {
-    //     name: 'bcryptjs'
-    // },
+    {
+        name: 'styled-components'
+    },
+    {
+        name: 'Antd'
+    },
     // {
     //     name: 'react-slick'
     // },

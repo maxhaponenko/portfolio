@@ -61,7 +61,7 @@ class PagesWrapper extends Component {
                                         <i className="far fa-clock"></i>
                                     </div>
                                     <div className="rates__hourly--text">
-                                        <span>from</span> $9 / <span>hour</span>
+                                        <span>from</span> $10 / <span>hour</span>
                                     </div>
                                 </div>
                             )}
