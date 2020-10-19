@@ -1,7 +1,7 @@
 export const mainSettings = {
     rate: {
-        show: true,
-        hourlyRate: true,
+        show: false,
+        hourlyRate: false,
         monthlyRate: false,
     },
     firstView: {

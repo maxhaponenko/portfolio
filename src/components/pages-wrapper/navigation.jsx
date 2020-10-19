@@ -3,24 +3,23 @@ import { animatePosition } from '../../services/animation';
 import NavItems from './nav-items';
 
 class Navigation extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            navigationOpen: false,
-            navButtonDisabled: false,
-            navigationIsHidden: false,
-            hiddenNavigationIsOpened: false,
-            pages: {
-                main: 'main',
-                skills: 'skills',
-                experience: 'experience',
-                projects: 'projects',
-                education: 'education'
-            },
-            activePage: 'main',
-            firstSurnameLetter: 'H'
-        }
+    state = {
+        navigationOpen: false,
+        navButtonDisabled: false,
+        navigationIsHidden: false,
+        hiddenNavigationIsOpened: false,
+        pages: {
+            main: 'main',
+            skills: 'skills',
+            experience: 'experience',
+            projects: 'projects',
+            education: 'education'
+        },
+        activePage: 'main',
+        firstSurnameLetter: 'H'
     }
+
+    pageName = React.createRef()
 
     changePage = (name) => {
         this.setState({
@@ -28,7 +27,7 @@ class Navigation extends React.Component {
         })
     }
 
-    checkPageName(path) {
+    checkPageName = (path) => {
         if (path === '/') {
             this.changePage('main')
         } else if (path === '/skills') {
@@ -42,10 +41,10 @@ class Navigation extends React.Component {
         }
     }
 
-    togglePageName(action) {
+    togglePageName = (action) => {
         if (action === 'hide') {
             animatePosition(this.pageName, 'top', '33px')
-        } 
+        }
         if (action === 'show') {
             animatePosition(this.pageName, 'top', '0px')
         }
@@ -70,7 +69,7 @@ class Navigation extends React.Component {
         window.removeEventListener('resize', this.calculateNavigationMode)
     }
 
-    calculateNavigationMode() {
+    calculateNavigationMode = () => {
         if (window.innerWidth < 500 || (window.scrollY > 50 && window.innerWidth < 500 && !this.state.navigationIsHidden)) {
             this.setState({
                 navigationIsHidden: true
@@ -82,7 +81,7 @@ class Navigation extends React.Component {
         }
     }
 
-    handleNavButtonClick() {
+    handleNavButtonClick = () => {
         if (!this.state.navButtonDisabled && !this.state.navigationIsHidden) {
             this.setState({
                 navigationOpen: !this.state.navigationOpen,
@@ -104,7 +103,7 @@ class Navigation extends React.Component {
         })
     }
 
-    enableNavButton(timeout) {
+    enableNavButton = (timeout) => {
         setTimeout(() => {
             this.setState({
                 navButtonDisabled: false
@@ -114,7 +113,7 @@ class Navigation extends React.Component {
 
 
     render() {
-        
+
         const getNavigationStyles = () => {
             const hiddenNavStyles = {
                 right: '-133px'
@@ -131,13 +130,13 @@ class Navigation extends React.Component {
 
         return (
             <nav style={getNavigationStyles()}>
-                <div className="toggler" style={this.state.navigationOpen ? { display: 'block' } : { display: 'none' }} onClick={() => {this.closeNavigationMenu()}}></div>
-                <div className="nav-page-name" style={this.state.navigationIsHidden ? { opacity: 0 } : { opacity: 1 }} ref={ref => this.pageName = ref}>
+                <div className="toggler" style={this.state.navigationOpen ? { display: 'block' } : { display: 'none' }} onClick={this.closeNavigationMenu}></div>
+                <div className="nav-page-name" style={this.state.navigationIsHidden ? { opacity: 0 } : { opacity: 1 }} ref={this.pageName}>
                     <span>{this.state.activePage}</span> page
                 </div>
                 <button
                     className={`nav-button ${this.state.navigationOpen ? 'active' : ''}`}
-                    onClick={() => this.handleNavButtonClick()}
+                    onClick={this.handleNavButtonClick}
                 >
                     <i className="fas fa-sort-amount-down-alt nav-button__icon"></i>
                     <div className="nav-button__text">Navigate</div>
@@ -145,8 +144,8 @@ class Navigation extends React.Component {
 
                 <NavItems
                     openMenu={this.state.navigationOpen}
-                    closeMenuCallback={() => this.closeNavigationMenu()}
-                    toggleContacts={() => this.props.toggleContacts()}
+                    closeMenuCallback={this.closeNavigationMenu}
+                    toggleContacts={this.props.toggleContacts}
                 />
             </nav>
         )

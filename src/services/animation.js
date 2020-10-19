@@ -1,17 +1,16 @@
 
 
-export function animatePosition(item, direction, size) {
+export const animatePosition = (item, direction, size) => {
     const animate = () => {
         if (direction === 'left') {
-            item.style.left = size; 
+            item.current.style.left = size; 
         } else if (direction === 'right') {
-            item.style.right = size;
+            item.current.style.right = size;
         } else if (direction === 'top') {
-            item.style.top = size;
+            item.current.style.top = size;
         } else if (direction === 'bottom') {
-            item.style.bottom = size
+            item.current.style.bottom = size
         }
-        window.requestAnimationFrame(animate)
     }
     window.requestAnimationFrame(animate)
 }
