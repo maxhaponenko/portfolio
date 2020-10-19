@@ -39,7 +39,7 @@ class NavItems extends Component {
                     let moveItemSize = action === 'open' ? '50px' : '-300px'
                     let moveMenuBlockSize = action === 'open' ? '0px' : '-300px'
                     let itemNumber = i + 1
-                    debugger
+                    
                     if (itemNumber === 1) {
                         animatePosition(this.menuBlock, 'right', moveMenuBlockSize)
                         animatePosition(this.item1, 'right', moveItemSize)

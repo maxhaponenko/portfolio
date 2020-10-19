@@ -19,7 +19,7 @@ export default class ContactsModal extends React.Component {
                     <ModalBody>
                         <div onClick={() => {
                             this.toggle()
-                        }} className="close-icon"><i class="fas fa-times"></i></div>
+                        }} className="close-icon"><i className="fas fa-times"></i></div>
                         <div className="contacts-block">
                             <div className="email">gaponenko.mm@gmail.com</div>
                             <div className="phone">+38 067 675 84 82</div>

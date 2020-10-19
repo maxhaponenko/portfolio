@@ -6,11 +6,8 @@ import { experience } from '../../data/experience';
 
 export default class Experience extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isOpen: [0]
-        }
+    state = {
+        isOpen: [0]
     }
 
     componentDidMount() {
@@ -18,7 +15,6 @@ export default class Experience extends Component {
     }
 
     collapse(id) {
-        console.log('hohoho: ' + id)
         if (this.state.isOpen.some(i => i === id)) {
             let array = this.state.isOpen
             let index = array.indexOf(id)
@@ -68,7 +64,7 @@ export default class Experience extends Component {
 
 class ExperienceItem extends Component {
     
-    renderDescriptionItem(item) {  
+    renderDescriptionItem(item, index) {  
         const renderTitle = (title) => {
             let firstLetter = title[0]
             let withoutFirstLetter = title.slice(1)
@@ -77,7 +73,7 @@ class ExperienceItem extends Component {
             )
         }
         return (
-            <React.Fragment>
+            <div key={index}>
                 {renderTitle(item.title)}
                 <div className="experience-item__content__description">
                     {item.text !== undefined && (
@@ -85,13 +81,13 @@ class ExperienceItem extends Component {
                     )}
                     {item.list.length >= 1 && (
                         <ul>
-                            {item.list.map(item => {
-                                return <li>{item}</li>
+                            {item.list.map((item, index) => {
+                                return <li key={index}>{item}</li>
                             })}
                         </ul>
                     )}
                 </div>
-            </React.Fragment>
+            </div>
         )
     }
 
@@ -115,8 +111,8 @@ class ExperienceItem extends Component {
                     </div>
                     <Collapse isOpen={isOpen.some(item => item === index)}>
                         <div className="experience-item__content">
-                            {item.descriptionItems.map(item => {
-                                return this.renderDescriptionItem(item)
+                            {item.descriptionItems.map((item, index) => {
+                                return this.renderDescriptionItem(item, index)
                             })}
                         </div>
                     </Collapse>
