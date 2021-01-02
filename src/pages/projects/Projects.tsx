@@ -5,7 +5,6 @@ import FastLinksCompact from '../../components/other/fast-links.component';
 import VideoPhoneFrame from './video-phone-frame/video-phone-frame';
 import PhoneFrameImage from 'media/images/projectsImages/phone-frame-sumsung.png';
 import { Template } from 'data/projects';
-import AppVideo2 from 'media/video/app-video-2.mp4';
 import './projects.scss'
 
 export default class Projects extends Component {
