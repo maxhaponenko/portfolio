@@ -1,6 +1,16 @@
 export const technicalSkills = [
     {
-        name: 'React & Redux',
+        name: 'React',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'React Native',
+        experience: '',
+        expType: ''
+    },
+    {
+        name: 'Redux',
         experience: '',
         expType: ''
     },
@@ -25,17 +35,7 @@ export const technicalSkills = [
         expType: ''
     },
     {
-        name: 'Express.js',
-        experience: '',
-        expType: ''
-    },
-    {
-        name: 'Mongoose',
-        experience: '',
-        expType: ''
-    },
-    {
-        name: 'Electron.js',
+        name: 'HubSpot CMS themes',
         experience: '',
         expType: ''
     },
@@ -144,6 +144,9 @@ export const libraries = [
     },
     {
         name: 'react-redux'
+    },
+    {
+        name: 'react-spring'
     },
     {
         name: 'redux-actions'

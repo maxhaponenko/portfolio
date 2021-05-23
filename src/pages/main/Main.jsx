@@ -20,8 +20,8 @@ export default class Main extends Component {
                                 <div className="main__container-contentBlock">
                                     <p><span>Status:</span> open to proposals</p>
                                     <p><span>Job:</span> frontend developer in TransferRoom Ltd</p>
-                                    <p><span>Using now:</span> JS ES6+, TypeScript, React, React Native, Redux, SCSS</p>
-                                    <p><span>General experience:</span> 2 years</p>
+                                    <p><span>Using now:</span> JS ES6+, TypeScript, React, React Native, Redux, SCSS, styled-components</p>
+                                    <p><span>General experience:</span> 2,5 years</p>
                                     <p><span>Languages:</span></p>
                                     <ul>
                                         <li>English - Upper-intermediate</li>
