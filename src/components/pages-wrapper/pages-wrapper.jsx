@@ -87,7 +87,7 @@ class PagesWrapper extends Component {
                     {this.props.children}
                 </div>
                 <footer>
-                        <div className="copyright">Copyright 2020</div>
+                        <div className="copyright">Copyright {new Date().getFullYear()}</div>
                         {/* <div className="contacts">
                             <div onClick={() => {
                                 this.toggleContactsModal()
