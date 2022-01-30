@@ -78,24 +78,24 @@ export const experience = [
             }
         ]
     },
-    {
-        imgSrc: require('../media/images/companiesLogos/logo_escapequest.png'),
-        companyName: 'Escape Quest',
-        role: 'Entertainment location Director',
-        dates: 'Dec 2015 - Nov 2016',
-        descriptionItems: [
-            {
-                title: 'Responsibilities',
-                text: 'Not related to Frontend, but who knows =) :',
-                list: [
-                    'Сreation of scenery for the quest room',
-                    'Сustomer service management',
-                    'Marketing and advertising',
-                    'Work with partners'
-                ]
-            }
-        ]
-    },
+    // {
+    //     imgSrc: require('../media/images/companiesLogos/logo_escapequest.png'),
+    //     companyName: 'Escape Quest',
+    //     role: 'Entertainment location Director',
+    //     dates: 'Dec 2015 - Nov 2016',
+    //     descriptionItems: [
+    //         {
+    //             title: 'Responsibilities',
+    //             text: 'Not related to Frontend, but who knows =) :',
+    //             list: [
+    //                 'Сreation of scenery for the quest room',
+    //                 'Сustomer service management',
+    //                 'Marketing and advertising',
+    //                 'Work with partners'
+    //             ]
+    //         }
+    //     ]
+    // },
     {
         imgSrc: require('../media/images/companiesLogos/logo_forpay.png'),
         companyName: 'ForPay',
