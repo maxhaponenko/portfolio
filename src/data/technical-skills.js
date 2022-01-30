@@ -10,12 +10,12 @@ export const technicalSkills = [
         expType: ''
     },
     {
-        name: 'Redux',
+        name: 'Next.js',
         experience: '',
         expType: ''
     },
     {
-        name: 'JavaScript (ES6+)',
+        name: 'Redux',
         experience: '',
         expType: ''
     },
@@ -25,7 +25,7 @@ export const technicalSkills = [
         expType: ''
     },
     {
-        name: 'SCSS & BEM',
+        name: 'SCSS',
         experience: '',
         expType: ''
     },
@@ -35,7 +35,7 @@ export const technicalSkills = [
         expType: ''
     },
     {
-        name: 'HubSpot CMS themes',
+        name: 'HubSpot CMS',
         experience: '',
         expType: ''
     },

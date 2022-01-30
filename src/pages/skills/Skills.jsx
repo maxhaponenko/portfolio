@@ -48,7 +48,7 @@ export default class Skills extends Component {
                                 breakpoints={[900, 650]}/>
                         </div>
                     </div>
-                    <div className="main__container">
+                    {/* <div className="main__container">
                         <div className="main__container-heading main__container-heading--blue-highlighted">
                             Libraries <span>familiar with</span>
                         </div>
@@ -58,7 +58,7 @@ export default class Skills extends Component {
                                     maxColumns={3} 
                                     breakpoints={[900, 650]}/>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="main__container">
                         <div className="main__container-heading main__container-heading--blue-highlighted">
                             Tools & Workflow

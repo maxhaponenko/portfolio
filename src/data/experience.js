@@ -3,46 +3,37 @@ export const experience = [
     {
         imgSrc: require('../media/images/companiesLogos/logo_transferroom.png'),
         companyName: 'TransferRoom',
-        role: 'Frontend Developer',
+        role: 'Frontend Engineer',
         dates: 'Nov 2019 - Nowadays',
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: 'This company give me an opportunity to get real team based commercial experience. Now I am involved in:',
+                text: `<br/>Mostly responsible for UI/UX quality, new UI frameworks and CMS integrations. 
+                <br/><br/>Initially focused on components development from scratch using React, Redux, Redux-Thunk, SCSS. Took part in gradual migration to TypeScript and code base refactoring. Proposed and worked on scss to styled-components refactoring.
+                <br/><br/>Performed coaching of junior / trainee developers joining the team. Proposed and implemented automated trainee studying program. At this moment it serves 5 trainee developers studying simultaniously during 2.5 months.
+                <br/><br/>Took a leading position in the development of the new marketing CMS based website (Hubspot CMS). During initial development stage took part in regular meetings with London stakeholders: colecting requirements, UI discussions and managed dev process at all.
+                <br/><br/>Regularly documented and created tickets for technical debt issues. Documented key frontend conventions and code / QA standards. Now I am responsible for keeping “wiki frontend” part up to date. <br/><br/>`,
                 list: [
-                    'Creating the responsive layout for different variety of components and perfect layout for different languages',
-                    'Using the Rest API and thunk middleware to connect to the server',
-                    'Bug fixing',
-                    'Creating complex and reusable components',
-                    'Changes and improvements in routing and redirect policy',
-                    'Components refactoring to TypeScript',
-                    'Components design development',
-                    'Email templates layout'
                 ]
             },
             {
-                title: 'Workflow / dev tools',
+                title: 'Workflow',
                 text: undefined,
                 list: [
                     'Git',
                     'Azure DevOps',
-                    'Mailjet',
-                    'Slack',
-                    'SCRUM'
                 ]
             },
             {
                 title: 'Technologies and libs',
                 text: undefined,
                 list: [
-                    'ES6+',
                     'TypeScript',
                     'React',
                     'Redux',
                     'Redux-thunk',
-                    'Scss, CSS Modules',
-                    'Reactstrap',
-                    'Moment.js',
+                    'Scss, CSS Modules, styled-components',
+                    'Reactstrap, Ant.design',
                     'ApexCharts.js'
                 ]
             },
@@ -58,17 +49,9 @@ export const experience = [
                 title: 'Responsibilities',
                 text: 'I got a job as a marketing manager, but over time I also started to perform frontend work',
                 list: [
-                    'Responsive and cross browser layout (without css frameworks)',
+                    'Responsive and cross browser layout',
                     'Communication with the owner and partners exclusively in English (correspondence and live talk)',
-                    'Negotiation and communication with developers in upWork (only in English). Managing freelance orders'
-                ]
-            },
-            {
-                title: 'Workflow & Tools',
-                text: undefined,
-                list: [
-                    'Trello',
-                    'SCRUM'
+                    'Negotiation and communication with developers in upWork. Managing freelance orders'
                 ]
             }
         ]
@@ -81,25 +64,16 @@ export const experience = [
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: 'During this project I closed a lot of different functionalities. But main responsibility for me was to deliver product to the market and test business model for viability. Here is a list of functionalities:',
+                text: 'During this project I weared a lot of hats and closed a lot of different functionalities. But main responsibility for me was to deliver product to the market and test business model for viability. Here is a list of functionalities:',
                 list: [
-                    'Business modeling',
-                    'Managing workflow and product developing',
-                    'Communication with investor and partners',
+                    'Writing requirements for Unity, Frontend and Backend development',
+                    'Managing product development',
                     'Interface prototyping',
                     'UI/UX design development',
                     'Frontend development',
-                    'Writing TR for Unity, Frontend and Backend development'
-                ]
-            },
-            {
-                title: 'Workflow & Tools & Software',
-                text: undefined,
-                list: [
-                    'Google docs',
-                    'Trello',
-                    'Photoshop',
-                    'drow.io'
+                    'Strategic sessions development',
+                    'Business modeling',
+                    'Communication with investor and partners',
                 ]
             }
         ]
@@ -134,16 +108,7 @@ export const experience = [
                 list: [
                     'R&D of the main business processes for key value proposition',
                     'Interface prototyping',
-                    'HTML & CSS layout of the landing page from PSD file'
-                ]
-            },
-            {
-                title: 'Technologies',
-                text: 'The very beginning of my frontend experience, thats why:',
-                list: [
-                    'HTML & CSS',
-                    'JS',
-                    'Slick.js'
+                    'HTML & CSS layout of the landing page from PSD'
                 ]
             }
         ]
@@ -162,13 +127,6 @@ export const experience = [
                     'Communication with project manager as product owner during all process of development',
                     'Q&A and writing tasks for edits',
                     'Negotiating with SEO specialists'
-                ]
-            },
-            {
-                title: 'Dev tools',
-                text: 'Only one tool I used to make changes of the layout manually and create desired visual result of the UI tasks:',
-                list: [
-                    'Chrome Dev Tools'
                 ]
             }
         ]

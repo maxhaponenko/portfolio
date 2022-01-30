@@ -77,7 +77,7 @@ class ExperienceItem extends Component {
                 {renderTitle(item.title)}
                 <div className="experience-item__content__description">
                     {item.text !== undefined && (
-                        <p>{item.text}</p>
+                        <p dangerouslySetInnerHTML={{ __html: item.text }}></p>
                     )}
                     {item.list.length >= 1 && (
                         <ul>

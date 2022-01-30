@@ -6,6 +6,25 @@ export enum Template {
 
 export const projects = [
     {
+        templateType: Template.OneRow, // With one row (only Laptop view image)
+        name: {
+            main: 'Hostel',
+            additional: undefined
+        },
+        projectType: 'Commercial project',
+        role: 'UI/UX developer',
+        workProcess: ['Requirements', 'UI/UX Design', 'Development'],
+        imageSrc: {
+            desktopView: require('../media/images/projectsImages/hostel_website.png'),
+        },
+        description: 'Next.js SSG website. Full cycle development, from requirements and design to code and deployment.',
+        link: {
+            href: 'https://ghost-hostel.com/',
+            text: 'ghost-hostel.com'
+        },
+        stack: ['React', 'Next.js', 'TypeScript', 'Redux', 'styled-components']
+    },
+    {
         templateType: Template.PhoneFrame, 
         name: {
             main: 'Beep Target',
