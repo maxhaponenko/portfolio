@@ -42,7 +42,7 @@ export const experience = [
     {
         imgSrc: require('../media/images/companiesLogos/logo_ixioo.png'),
         companyName: 'Ixioo',
-        role: 'Marketing Manager & HTML/CSS coder',
+        role: 'HTML/CSS developer',
         dates: 'Jul 2019 - Oct 2019',
         descriptionItems: [
             {
