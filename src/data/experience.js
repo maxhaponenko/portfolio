@@ -59,12 +59,12 @@ export const experience = [
     {
         imgSrc: require('../media/images/companiesLogos/logo_qg.png'),
         companyName: 'Quest Ground Ent.',
-        role: 'Co-Founder & UI/UX designer & Frontend Developer',
+        role: 'Co-Founder & UI developer',
         dates: 'Nov 2016 - Oct 2018',
         descriptionItems: [
             {
                 title: 'Responsibilities',
-                text: 'During this project I weared a lot of hats and closed a lot of different functionalities. But main responsibility for me was to deliver product to the market and test business model for viability. Here is a list of functionalities:',
+                text: 'During this project I weared a lot of hats and closed a lot of different functionalities. Main responsibility was delivering product to the market and test business model for viability. Here is a list of responsibilities',
                 list: [
                     'Writing requirements for Unity, Frontend and Backend development',
                     'Managing product development',
